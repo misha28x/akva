@@ -15,7 +15,13 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@akva/crm/layout": ["libs/crm/layout/src/index.ts"],
+      "@akva/crm/assets": ["libs/crm/assets/src/index.ts"],
+      "@akva/crm/consts": ["libs/crm/consts/src/index.ts"],
+      "@akva/shared/menu-utils": ["libs/shared/menu-utils/src/index.ts"],
+      "@akva/shared/typography": ["libs/shared/typography/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

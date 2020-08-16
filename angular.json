@@ -21,8 +21,19 @@
             "polyfills": "apps/crm/src/polyfills.ts",
             "tsConfig": "apps/crm/tsconfig.app.json",
             "aot": true,
-            "assets": ["apps/crm/src/favicon.ico", "apps/crm/src/assets"],
-            "styles": ["apps/crm/src/styles.scss"],
+            "stylePreprocessorOptions": {
+              "includePaths": ["libs/shared/styles/lib/style.scss"]
+            },
+            "assets": [
+              "apps/crm/src/favicon.ico",
+              "apps/crm/src/assets",
+              {
+                "input": "libs/crm/assets/src/lib",
+                "glob": "**/*",
+                "output": "assets"
+              }
+            ],
+            "styles": ["libs/shared/styles/lib/style.scss"],
             "scripts": []
           },
           "configurations": {
@@ -118,6 +129,128 @@
             "tsConfig": ["apps/crm-e2e/tsconfig.e2e.json"],
             "exclude": ["**/node_modules/**", "!apps/crm-e2e/**/*"]
           }
+        }
+      }
+    },
+    "crm-layout": {
+      "projectType": "library",
+      "root": "libs/crm/layout",
+      "sourceRoot": "libs/crm/layout/src",
+      "prefix": "akva",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/crm/layout/tsconfig.lib.json",
+              "libs/crm/layout/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/crm/layout/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/crm/layout/jest.config.js",
+            "tsConfig": "libs/crm/layout/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/crm/layout/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "crm-assets": {
+      "root": "libs/crm/assets",
+      "sourceRoot": "libs/crm/assets/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/crm/assets/tsconfig.lib.json",
+              "libs/crm/assets/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/crm/assets/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/crm/assets/jest.config.js",
+            "tsConfig": "libs/crm/assets/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "crm-consts": {
+      "root": "libs/crm/consts",
+      "sourceRoot": "libs/crm/consts/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/crm/consts/tsconfig.lib.json",
+              "libs/crm/consts/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/crm/consts/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/crm/consts/jest.config.js",
+            "tsConfig": "libs/crm/consts/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shared-menu-utils": {
+      "root": "libs/shared/menu-utils",
+      "sourceRoot": "libs/shared/menu-utils/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/menu-utils/tsconfig.lib.json",
+              "libs/shared/menu-utils/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/shared/menu-utils/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/menu-utils/jest.config.js",
+            "tsConfig": "libs/shared/menu-utils/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shared-typography": {
+      "projectType": "library",
+      "root": "libs/shared/typography",
+      "sourceRoot": "libs/shared/typography/src",
+      "prefix": "akva",
+      "architect": {},
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
         }
       }
     }

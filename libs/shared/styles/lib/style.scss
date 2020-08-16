@@ -1,0 +1,19 @@
+@import 'typography';
+@import 'variables';
+
+body {
+  background: $background;
+  overflow-x: hidden;
+  margin: 0;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  overflow: auto;
+}

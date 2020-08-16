@@ -23,11 +23,27 @@
   },
   "projects": {
     "crm": {
-      "tags": []
+      "tags": [],
+      "implicitDependencies": []
     },
     "crm-e2e": {
       "tags": [],
       "implicitDependencies": ["crm"]
+    },
+    "crm-layout": {
+      "tags": ["crm-assets"]
+    },
+    "crm-assets": {
+      "tags": []
+    },
+    "crm-consts": {
+      "tags": []
+    },
+    "shared-menu-utils": {
+      "tags": []
+    },
+    "shared-typography": {
+      "tags": ["scope:shared", "type:styles"]
     }
   }
 }
