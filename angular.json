@@ -22,7 +22,9 @@
             "tsConfig": "apps/crm/tsconfig.app.json",
             "aot": true,
             "stylePreprocessorOptions": {
-              "includePaths": ["libs/shared/styles/lib/"]
+              "includePaths": [
+                "libs/shared/styles/lib/"
+              ]
             },
             "assets": [
               "apps/crm/src/favicon.ico",
@@ -31,9 +33,17 @@
                 "input": "libs/crm/assets/src/lib",
                 "glob": "**/*",
                 "output": "assets"
+              },
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
+                "output": "/assets/"
               }
             ],
-            "styles": ["libs/shared/styles/lib/style.scss"],
+            "styles": [
+              "apps/crm/src/theme.less",
+              "libs/shared/styles/lib/style.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -91,7 +101,10 @@
               "apps/crm/tsconfig.app.json",
               "apps/crm/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/crm/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/crm/**/*"
+            ]
           }
         },
         "test": {
@@ -126,8 +139,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/crm-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/crm-e2e/**/*"]
+            "tsConfig": [
+              "apps/crm-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/crm-e2e/**/*"
+            ]
           }
         }
       }
@@ -145,7 +163,10 @@
               "libs/crm/assets/tsconfig.lib.json",
               "libs/crm/assets/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/crm/assets/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/crm/assets/**/*"
+            ]
           }
         },
         "test": {
@@ -171,7 +192,10 @@
               "libs/crm/consts/tsconfig.lib.json",
               "libs/crm/consts/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/crm/consts/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/crm/consts/**/*"
+            ]
           }
         },
         "test": {
@@ -205,12 +229,14 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-
             "tsConfig": [
               "libs/shared/layout/tsconfig.lib.json",
               "libs/shared/layout/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/shared/layout/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/layout/**/*"
+            ]
           }
         },
         "test": {
@@ -242,7 +268,10 @@
               "libs/crm/layout/tsconfig.lib.json",
               "libs/crm/layout/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/crm/layout/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/crm/layout/**/*"
+            ]
           }
         },
         "test": {
@@ -274,7 +303,10 @@
               "libs/shared/menu/tsconfig.lib.json",
               "libs/shared/menu/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/shared/menu/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/menu/**/*"
+            ]
           }
         },
         "test": {
