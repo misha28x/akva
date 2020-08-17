@@ -22,7 +22,7 @@
             "tsConfig": "apps/crm/tsconfig.app.json",
             "aot": true,
             "stylePreprocessorOptions": {
-              "includePaths": ["libs/shared/styles/lib/style.scss"]
+              "includePaths": ["libs/shared/styles/lib/"]
             },
             "assets": [
               "apps/crm/src/favicon.ico",
@@ -132,38 +132,6 @@
         }
       }
     },
-    "crm-layout": {
-      "projectType": "library",
-      "root": "libs/crm/layout",
-      "sourceRoot": "libs/crm/layout/src",
-      "prefix": "akva",
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/crm/layout/tsconfig.lib.json",
-              "libs/crm/layout/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/crm/layout/**/*"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/crm/layout/jest.config.js",
-            "tsConfig": "libs/crm/layout/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/crm/layout/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {
-        "@nrwl/angular:component": {
-          "style": "scss"
-        }
-      }
-    },
     "crm-assets": {
       "root": "libs/crm/assets",
       "sourceRoot": "libs/crm/assets/src",
@@ -216,32 +184,6 @@
         }
       }
     },
-    "shared-menu-utils": {
-      "root": "libs/shared/menu-utils",
-      "sourceRoot": "libs/shared/menu-utils/src",
-      "projectType": "library",
-      "schematics": {},
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/shared/menu-utils/tsconfig.lib.json",
-              "libs/shared/menu-utils/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/shared/menu-utils/**/*"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/shared/menu-utils/jest.config.js",
-            "tsConfig": "libs/shared/menu-utils/tsconfig.spec.json",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
     "shared-typography": {
       "projectType": "library",
       "root": "libs/shared/typography",
@@ -251,6 +193,97 @@
       "schematics": {
         "@nrwl/angular:component": {
           "style": "scss"
+        }
+      }
+    },
+    "shared-layout": {
+      "projectType": "library",
+      "root": "libs/shared/layout",
+      "sourceRoot": "libs/shared/layout/src",
+      "prefix": "akva",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+
+            "tsConfig": [
+              "libs/shared/layout/tsconfig.lib.json",
+              "libs/shared/layout/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/shared/layout/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/layout/jest.config.js",
+            "tsConfig": "libs/shared/layout/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/shared/layout/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "crm-layout": {
+      "projectType": "library",
+      "root": "libs/crm/layout",
+      "sourceRoot": "libs/crm/layout/src",
+      "prefix": "akva",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/crm/layout/tsconfig.lib.json",
+              "libs/crm/layout/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/crm/layout/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/crm/layout/jest.config.js",
+            "tsConfig": "libs/crm/layout/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/crm/layout/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "shared-menu": {
+      "root": "libs/shared/menu",
+      "sourceRoot": "libs/shared/menu/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/menu/tsconfig.lib.json",
+              "libs/shared/menu/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/shared/menu/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/menu/jest.config.js",
+            "tsConfig": "libs/shared/menu/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
         }
       }
     }

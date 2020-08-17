@@ -1,8 +1,6 @@
 @import './font';
 
-$background: #f4f5f7;
-$default-color: #464d69;
-$main-ff: 'Inter', sans-serif;
+$main-ff: 'Inter' sans-serif;
 $main-fs: 14px;
 $main-fw: 500;
 $module: 11px;
@@ -12,3 +10,76 @@ $shape: 5px;
 
 $sidebar-width: 24 * $module-rem;
 $min-sidebar-width: 9 * $module-rem;
+
+$light-blue-050: #e3f8ff;
+$light-blue-100: #b3ecff;
+$light-blue-200: #81defd;
+$light-blue-300: #5ed0fa;
+$light-blue-400: #40c3f7;
+$light-blue-500: #2bb0ed;
+$light-blue-600: #1992d4;
+$light-blue-700: #127fbf;
+$light-blue-800: #0b69a3;
+$light-blue-900: #035388;
+
+// Neutrals
+$grey-050: #f5f7fa;
+$grey-100: #e4e7eb;
+$grey-200: #cbd2d9;
+$grey-300: #9aa5b1;
+$grey-400: #7b8794;
+$grey-500: #616e7c;
+$grey-600: #52606d;
+$grey-700: #3e4c59;
+$grey-800: #323f4b;
+$grey-900: #1f2933;
+
+// Supporting
+$pink-050: #ffe3ec;
+$pink-100: #ffb8d2;
+$pink-200: #ff8cba;
+$pink-300: #f364a2;
+$pink-400: #e8368f;
+$pink-500: #da127d;
+$pink-600: #bc0a6f;
+$pink-700: #a30664;
+$pink-800: #870557;
+$pink-900: #620042;
+
+$red-050: #ffe3e3;
+$red-100: #ffbdbd;
+$red-200: #ff9b9b;
+$red-300: #f86a6a;
+$red-400: #ef4e4e;
+$red-500: #e12d39;
+$red-600: #cf1124;
+$red-700: #ab091e;
+$red-800: #8a041a;
+$red-900: #610316;
+
+$yellow-050: #fffbea;
+$yellow-100: #fff3c4;
+$yellow-200: #fce588;
+$yellow-300: #fadb5f;
+$yellow-400: #f7c948;
+$yellow-500: #f0b429;
+$yellow-600: #de911d;
+$yellow-700: #cb6e17;
+$yellow-800: #b44d12;
+$yellow-900: #8d2b0b;
+
+$teal-050: #effcf6;
+$teal-100: #c6f7e2;
+$teal-200: #8eedc7;
+$teal-300: #65d6ad;
+$teal-400: #3ebd93;
+$teal-500: #27ab83;
+$teal-600: #199473;
+$teal-700: #147d64;
+$teal-800: #0c6b58;
+$teal-900: #014d40;
+
+$info-color: $light-blue-400;
+$success-color: $teal-500;
+$warning-color: $yellow-500;
+$error-color: $red-600;

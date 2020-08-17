@@ -1,4 +1,4 @@
-import { MenuLink } from '../../../../shared/menu-utils/src/lib/models';
+import { MenuLink } from '@akva/shared/menu';
 
 export const adminMenu: MenuLink[] = [
   {

@@ -30,20 +30,23 @@
       "tags": [],
       "implicitDependencies": ["crm"]
     },
-    "crm-layout": {
-      "tags": ["crm-assets"]
-    },
     "crm-assets": {
       "tags": []
     },
     "crm-consts": {
       "tags": []
     },
-    "shared-menu-utils": {
-      "tags": []
-    },
     "shared-typography": {
       "tags": ["scope:shared", "type:styles"]
+    },
+    "shared-layout": {
+      "tags": []
+    },
+    "crm-layout": {
+      "tags": []
+    },
+    "shared-menu": {
+      "tags": []
     }
   }
 }
