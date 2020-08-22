@@ -39,13 +39,13 @@
     "shared-typography": {
       "tags": ["scope:shared", "type:styles"]
     },
-    "shared-layout": {
-      "tags": []
-    },
     "crm-layout": {
       "tags": []
     },
     "shared-menu": {
+      "tags": []
+    },
+    "shared-ui-icon": {
       "tags": []
     }
   }

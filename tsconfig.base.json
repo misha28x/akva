@@ -18,10 +18,10 @@
     "paths": {
       "@akva/crm/assets": ["libs/crm/assets/src/index.ts"],
       "@akva/shared/typography": ["libs/shared/typography/src/index.ts"],
-      "@akva/shared/layout": ["libs/shared/layout/src/index.ts"],
       "@akva/crm/layout": ["libs/crm/layout/src/index.ts"],
       "@akva/shared/menu": ["libs/shared/menu/src/index.ts"],
-      "@akva/crm/consts": ["libs/crm/consts/src/index.ts"]
+      "@akva/crm/consts": ["libs/crm/consts/src/index.ts"],
+      "@akva/shared/ui-icon": ["libs/shared/ui-icon/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

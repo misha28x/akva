@@ -1,0 +1,24 @@
+@import './variables';
+
+$_sidebar-bg: $grey-700;
+
+$_logo-bg: $grey-900;
+$_logo-height: $header-height;
+$_logo__img-height: 48px;
+
+:host {
+  background-color: $_sidebar-bg;
+
+  width: $sidebar-width;
+  height: 100%;
+
+  .logo {
+    background-color: $_logo-bg;
+    padding: $padding-xs $padding-md;
+    height: $_logo-height;
+
+    &__img {
+      height: $_logo__img-height;
+    }
+  }
+}

@@ -1,4 +1,4 @@
-@import "../node_modules/ng-zorro-antd/ng-zorro-antd.less";
+@import '../../../node_modules/ng-zorro-antd/ng-zorro-antd.less';
 @theme: default;
 
 // The prefix to use on all css classes from ant.
@@ -8,28 +8,34 @@
 @html-selector: html;
 
 // -------- Colors -----------
-@primary-color: @blue-6;
-@info-color: @blue-6;
-@success-color: @green-6;
-@processing-color: @blue-6;
-@error-color: @red-5;
-@highlight-color: @red-5;
-@warning-color: @gold-6;
+@primary-color: #0552b5;
+@info-color: #2186eb;
+@success-color: #27ab83;
+@processing-color: #2186eb;
+@error-color: #cf1124;
+@highlight-color: #cf1124;
+@warning-color: #f0b429;
 @normal-color: #d9d9d9;
-@white: #fff;
-@black: #000;
+@white: #f5f7fa;
+@black: #161d29;
 
-// Color used by default to control hover and active backgrounds and for
+// Color used by default-layout to control hover and active backgrounds and for
 // alert info backgrounds.
-@primary-1: color(~`colorPalette('@{primary-color}', 1) `); // replace tint(@primary-color, 90%)
-@primary-2: color(~`colorPalette('@{primary-color}', 2) `); // replace tint(@primary-color, 80%)
+@primary-1: color(
+  ~`colorPalette('@{primary-color}', 1) `
+); // replace tint(@primary-color, 90%)
+@primary-2: color(
+  ~`colorPalette('@{primary-color}', 2) `
+); // replace tint(@primary-color, 80%)
 @primary-3: color(~`colorPalette('@{primary-color}', 3) `); // unused
 @primary-4: color(~`colorPalette('@{primary-color}', 4) `); // unused
 @primary-5: color(
   ~`colorPalette('@{primary-color}', 5) `
 ); // color used to control the text color in many active and hover states, replace tint(@primary-color, 20%)
 @primary-6: @primary-color; // color used to control the text color of active buttons, don't use, use @primary-color
-@primary-7: color(~`colorPalette('@{primary-color}', 7) `); // replace shade(@primary-color, 5%)
+@primary-7: color(
+  ~`colorPalette('@{primary-color}', 7) `
+); // replace shade(@primary-color, 5%)
 @primary-8: color(~`colorPalette('@{primary-color}', 8) `); // unused
 @primary-9: color(~`colorPalette('@{primary-color}', 9) `); // unused
 @primary-10: color(~`colorPalette('@{primary-color}', 10) `); // unused
@@ -38,16 +44,17 @@
 // ---
 
 // Background color for `<body>`
-@body-background: #fff;
+@body-background: #f5f7fa;
 // Base background color for most components
-@component-background: #fff;
+@component-background: #e4e7eb;
 // Popover background color
 @popover-background: @component-background;
 @popover-customize-border-color: @border-color-split;
-@font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
-'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
-'Noto Color Emoji';
-@code-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+@font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+  'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
+  'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+@code-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier,
+  monospace;
 @text-color: fade(@black, 65%);
 @text-color-secondary: fade(@black, 45%);
 @text-color-inverse: @white;
@@ -79,10 +86,6 @@
 @padding-xs: 8px; // small items
 @padding-xss: 4px; // more small
 
-// vertical padding for all form controls
-@control-padding-horizontal: @padding-sm;
-@control-padding-horizontal-sm: @padding-xs;
-
 // vertical margins
 @margin-lg: 24px; // containers
 @margin-md: 16px; // small containers and buttons
@@ -94,6 +97,10 @@
 @height-base: 32px;
 @height-lg: 40px;
 @height-sm: 24px;
+
+// vertical padding for all form controls
+@control-padding-horizontal: @padding-sm;
+@control-padding-horizontal-sm: @padding-xs;
 
 // The background colors for active and hover states for things like
 // list items or table cells.
@@ -141,7 +148,11 @@
 @outline-color: @primary-color;
 @outline-fade: 20%;
 
-@background-color-light: hsv(0, 0, 98%); // background of header and selected item
+@background-color-light: hsv(
+  0,
+  0,
+  98%
+); // background of header and selected item
 @background-color-base: hsv(0, 0, 96%); // Default grey background color
 
 // Disabled states
@@ -153,16 +164,16 @@
 @shadow-color: rgba(0, 0, 0, 0.15);
 @shadow-color-inverse: @component-background;
 @box-shadow-base: @shadow-2;
-@shadow-1-up: 0 -6px 16px -8px rgba(0, 0, 0, 0.08), 0 -9px 28px 0 rgba(0, 0, 0, 0.05),
-  0 -12px 48px 16px rgba(0, 0, 0, 0.03);
-@shadow-1-down: 0 6px 16px -8px rgba(0, 0, 0, 0.08), 0 9px 28px 0 rgba(0, 0, 0, 0.05),
-0 12px 48px 16px rgba(0, 0, 0, 0.03);
-@shadow-1-left: -6px 0 16px -8px rgba(0, 0, 0, 0.08), -9px 0 28px 0 rgba(0, 0, 0, 0.05),
--12px 0 48px 16px rgba(0, 0, 0, 0.03);
-@shadow-1-right: 6px 0 16px -8px rgba(0, 0, 0, 0.08), 9px 0 28px 0 rgba(0, 0, 0, 0.05),
-12px 0 48px 16px rgba(0, 0, 0, 0.03);
+@shadow-1-up: 0 -6px 16px -8px rgba(0, 0, 0, 0.08),
+  0 -9px 28px 0 rgba(0, 0, 0, 0.05), 0 -12px 48px 16px rgba(0, 0, 0, 0.03);
+@shadow-1-down: 0 6px 16px -8px rgba(0, 0, 0, 0.08),
+  0 9px 28px 0 rgba(0, 0, 0, 0.05), 0 12px 48px 16px rgba(0, 0, 0, 0.03);
+@shadow-1-left: -6px 0 16px -8px rgba(0, 0, 0, 0.08),
+  -9px 0 28px 0 rgba(0, 0, 0, 0.05), -12px 0 48px 16px rgba(0, 0, 0, 0.03);
+@shadow-1-right: 6px 0 16px -8px rgba(0, 0, 0, 0.08),
+  9px 0 28px 0 rgba(0, 0, 0, 0.05), 12px 0 48px 16px rgba(0, 0, 0, 0.03);
 @shadow-2: 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08),
-0 9px 28px 8px rgba(0, 0, 0, 0.05);
+  0 9px 28px 8px rgba(0, 0, 0, 0.05);
 
 // Buttons
 @btn-font-weight: 400;
@@ -174,7 +185,7 @@
 @btn-primary-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
 @btn-text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
 
-@btn-primary-color: #fff;
+@btn-primary-color: @white;
 @btn-primary-bg: @primary-color;
 
 @btn-default-color: @text-color;
@@ -366,16 +377,18 @@
 @input-padding-horizontal-sm: @control-padding-horizontal-sm - 1px;
 @input-padding-horizontal-lg: @input-padding-horizontal;
 @input-padding-vertical-base: max(
-    round((@input-height-base - @font-size-base * @line-height-base) / 2 * 10) / 10 -
-      @border-width-base,
+  round((@input-height-base - @font-size-base * @line-height-base) / 2 * 10) /
+    10 - @border-width-base,
   3px
 );
 @input-padding-vertical-sm: max(
-    round((@input-height-sm - @font-size-base * @line-height-base) / 2 * 10) / 10 - @border-width-base,
+  round((@input-height-sm - @font-size-base * @line-height-base) / 2 * 10) / 10 -
+    @border-width-base,
   0
 );
-@input-padding-vertical-lg: ceil((@input-height-lg - @font-size-lg * @line-height-base) / 2 * 10) /
-  10 - @border-width-base;
+@input-padding-vertical-lg: ceil(
+    (@input-height-lg - @font-size-lg * @line-height-base) / 2 * 10
+  ) / 10 - @border-width-base;
 @input-placeholder-color: hsv(0, 0, 75%);
 @input-color: @text-color;
 @input-icon-color: @input-color;
@@ -413,7 +426,8 @@
 @select-selection-item-bg: @background-color-base;
 @select-selection-item-border-color: @border-color-split;
 @select-single-item-height-lg: 40px;
-@select-multiple-item-height: @input-height-base - @input-padding-vertical-base * 2; // Normal 24px
+@select-multiple-item-height: @input-height-base - @input-padding-vertical-base *
+  2; // Normal 24px
 @select-multiple-item-height-lg: 32px;
 @select-multiple-item-spacing-half: ceil(@input-padding-vertical-base / 2);
 
@@ -627,8 +641,8 @@
 @card-actions-li-margin: 12px 0;
 @card-skeleton-bg: #cfd8dc;
 @card-background: @component-background;
-@card-shadow: 0 1px 2px -2px rgba(0, 0, 0, 0.16), 0 3px 6px 0 rgba(0, 0, 0, 0.12),
-0 5px 12px 4px rgba(0, 0, 0, 0.09);
+@card-shadow: 0 1px 2px -2px rgba(0, 0, 0, 0.16),
+  0 3px 6px 0 rgba(0, 0, 0, 0.12), 0 5px 12px 4px rgba(0, 0, 0, 0.09);
 @card-radius: @border-radius-base;
 @card-head-tabs-margin-bottom: -17px;
 
@@ -892,4 +906,3 @@
 // Notification
 // ---
 @notification-bg: @component-background;
-

@@ -1,0 +1,15 @@
+<nav class="menu">
+  <ul class="menu__list">
+    <li *ngFor="let item of menu" class="item menu__item">
+      <a
+        [routerLink]="item.routing"
+        routerLinkActive="item__link--active"
+        class="item__link"
+      >
+        <akva-icon class="item__icon" [icon]="item.icon"></akva-icon>
+        <span class="item__title">{{ item.title }}</span>
+        <span class="item__counter">{{ item.counter }}</span>
+      </a>
+    </li>
+  </ul>
+</nav>

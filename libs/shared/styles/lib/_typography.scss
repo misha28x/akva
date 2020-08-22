@@ -7,9 +7,9 @@ html {
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: $background;
+  color: $text-color;
   font-family: $main-ff;
-  font-size: 1rem;
+  font-size: $main-fs;
   font-weight: $main-fw;
   line-height: $main-lh;
 }
@@ -26,8 +26,8 @@ h5,
 h6,
 .h6 {
   font-weight: 600;
-  margin-top: $module-rem;
-  margin-bottom: $module-rem * 2;
+  margin-top: $margin-sm;
+  margin-bottom: $margin-md;
 }
 h1,
 .h1 {
@@ -62,32 +62,23 @@ h6,
 p,
 ul,
 ol,
-pre,
-blockquote {
+pre {
   margin-top: 0;
-  margin-bottom: $module-rem * 2;
-}
-
-blockquote {
-  border-left: 3px solid #e22a6f;
-  font-size: 1.29rem;
-  font-weight: 400;
-  line-height: 1.33;
-  margin-left: 3 * $module-rem;
-  padding-left: 2 * $module-rem;
+  margin-bottom: $margin-sm;
 }
 
 a {
-  transition: color 0.2s ease-in-out;
-}
-a,
-a:visited,
-a:focus,
-a:active,
-a:hover {
-  outline: 0 none !important;
+  color: $link-color;
+  text-decoration: $link-decoration;
+  transition: color $animation-duration-base $ease-in-out;
 }
 
-button:focus {
-  outline: none !important;
+a:hover {
+  color: $link-hover-color;
+  text-decoration: $link-hover-decoration;
+}
+
+a:active {
+  color: $link-active-color;
+  text-decoration: $link-active-color;
 }

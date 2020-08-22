@@ -1,38 +1,63 @@
 @import './font';
 
+// Typography
+///////////////////////////////////////////////////////
+
 $main-ff: 'Inter' sans-serif;
 $main-fs: 14px;
 $main-fw: 500;
-$module: 11px;
 $main-lh: 1.58;
+
+// Spacing
+//////////////////////////////////////////////////////
+
+$shape: 6px;
+$module: 8px;
 $module-rem: ($module / $main-fs) * 1rem;
-$shape: 5px;
 
-$sidebar-width: 24 * $module-rem;
-$min-sidebar-width: 9 * $module-rem;
+$padding-lg: $module-rem * 3; // containers
+$padding-md: $module-rem * 2; // small containers and buttons
+$padding-sm: $module-rem * 1.5; // Form controls and items
+$padding-xs: $module-rem; // small items
+$padding-xss: $module-rem / 2; // more small
 
-$light-blue-050: #e3f8ff;
-$light-blue-100: #b3ecff;
-$light-blue-200: #81defd;
-$light-blue-300: #5ed0fa;
-$light-blue-400: #40c3f7;
-$light-blue-500: #2bb0ed;
-$light-blue-600: #1992d4;
-$light-blue-700: #127fbf;
-$light-blue-800: #0b69a3;
-$light-blue-900: #035388;
+$margin-lg: $module-rem * 3; // containers
+$margin-md: $module-rem * 2; // small containers and buttons
+$margin-sm: $module-rem * 1.5; // Form controls and items
+$margin-xs: $module-rem; // small items
+$margin-xss: $module-rem / 2; // more small
+
+// Components
+/////////////////////////////////////////////////
+
+$sidebar-width: $module-rem * 34;
+$header-height: $module-rem * 8;
+
+// Colors
+//////////////////////////////////////////////////////
+
+$blue-050: #e6f6ff;
+$blue-100: #bae3ff;
+$blue-200: #7cc4fa;
+$blue-300: #47a3f3;
+$blue-400: #2186eb;
+$blue-500: #0967d2;
+$blue-600: #0552b5;
+$blue-700: #03449e;
+$blue-800: #01337d;
+$blue-900: #002159;
 
 // Neutrals
 $grey-050: #f5f7fa;
-$grey-100: #e4e7eb;
-$grey-200: #cbd2d9;
-$grey-300: #9aa5b1;
-$grey-400: #7b8794;
-$grey-500: #616e7c;
-$grey-600: #52606d;
-$grey-700: #3e4c59;
-$grey-800: #323f4b;
-$grey-900: #1f2933;
+$grey-100: #e5e6e8;
+$grey-200: #bec1c5;
+$grey-300: #92979f;
+$grey-400: #666d79;
+$grey-500: #464e5c;
+$grey-600: #252f3f;
+$grey-700: #212a39;
+$grey-800: #1b2331;
+$grey-900: #161d29;
 
 // Supporting
 $pink-050: #ffe3ec;
@@ -79,7 +104,45 @@ $teal-700: #147d64;
 $teal-800: #0c6b58;
 $teal-900: #014d40;
 
-$info-color: $light-blue-400;
+$primary-color: $blue-600;
+$info-color: $blue-400;
 $success-color: $teal-500;
 $warning-color: $yellow-500;
 $error-color: $red-600;
+
+$white: $grey-050;
+$black: $grey-900;
+
+$body-background: $grey-100;
+$text-color: $grey-900;
+
+// LINK
+//////////////////////////////////////////////
+$link-color: $primary-color;
+$link-hover-color: darken($link-color, 10);
+$link-active-color: darken($link-color, 20);
+$link-decoration: none;
+$link-hover-decoration: none;
+$link-focus-decoration: none;
+$link-focus-outline: 0;
+
+// Animation
+/////////////////////////////////////////////////
+$animation-duration-slow: 0.3s; // Modal
+$animation-duration-base: 0.2s;
+$animation-duration-fast: 0.1s; // Tooltip
+
+$ease-base-out: cubic-bezier(0.7, 0.3, 0.1, 1);
+$ease-base-in: cubic-bezier(0.9, 0, 0.3, 0.7);
+$ease-out: cubic-bezier(0.215, 0.61, 0.355, 1);
+$ease-in: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+$ease-in-out: cubic-bezier(0.645, 0.045, 0.355, 1);
+$ease-out-back: cubic-bezier(0.12, 0.4, 0.29, 1.46);
+$ease-in-back: cubic-bezier(0.71, -0.46, 0.88, 0.6);
+$ease-in-out-back: cubic-bezier(0.71, -0.46, 0.29, 1.46);
+$ease-out-circ: cubic-bezier(0.08, 0.82, 0.17, 1);
+$ease-in-circ: cubic-bezier(0.6, 0.04, 0.98, 0.34);
+$ease-in-out-circ: cubic-bezier(0.78, 0.14, 0.15, 0.86);
+$ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
+$ease-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+$ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);

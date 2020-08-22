@@ -1,5 +1,5 @@
 module.exports = {
-  name: 'shared-layout',
+  name: 'shared-ui-icon',
   preset: '../../../jest.config.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -12,7 +12,7 @@ module.exports = {
       ],
     },
   },
-  coverageDirectory: '../../../coverage/libs/shared/layout',
+  coverageDirectory: '../../../coverage/libs/shared/ui-icon',
   snapshotSerializers: [
     'jest-preset-angular/build/AngularNoNgAttributesSnapshotSerializer.js',
     'jest-preset-angular/build/AngularSnapshotSerializer.js',
