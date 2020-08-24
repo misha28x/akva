@@ -47,6 +47,9 @@
     },
     "shared-ui-icon": {
       "tags": []
+    },
+    "crm-auth": {
+      "tags": []
     }
   }
 }

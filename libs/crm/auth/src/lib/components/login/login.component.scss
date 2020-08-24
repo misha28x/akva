@@ -1,0 +1,75 @@
+@import 'variables';
+
+$_content-bg: $white;
+$_content-width: $module-rem * 60;
+
+$_sidebar-bg: $blue-900;
+$_sidebar__title-fz: 80px;
+
+:host {
+  height: 100%;
+  display: flex;
+
+  .auth-content {
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+    background-color: $_content-bg;
+    padding: 0 $padding-lg;
+    height: 100%;
+    width: $_content-width;
+    flex-shrink: 0;
+
+    &__logo {
+      top: 0;
+      position: absolute;
+    }
+  }
+
+  .sidebar {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex: 1;
+
+    background-size: cover;
+    background-position: top right;
+    background-image: url('../../assets/login-bg.jpg');
+
+    &__img {
+      height: 68px;
+    }
+
+    &__text-block {
+      background-color: rgba($_sidebar-bg, 0.4);
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .logo {
+    align-items: center;
+    display: flex;
+
+    &__img {
+      margin-left: -22px;
+      height: 160px;
+    }
+  }
+
+  .form {
+    &__label {
+      font-size: $x-large-fs;
+      margin-bottom: $margin-lg;
+      letter-spacing: -0.3px;
+    }
+
+    &__section {
+      margin: $margin-lg 0;
+    }
+
+    &__button {
+      width: 100%;
+    }
+  }
+}

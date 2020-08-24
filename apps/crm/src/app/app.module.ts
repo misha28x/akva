@@ -11,6 +11,7 @@ import { uk_UA } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
 import uk from '@angular/common/locales/uk';
 
+import { CrmAuthModule } from '@akva/crm/auth';
 import { CrmLayoutModule } from '@akva/crm/layout';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -23,6 +24,7 @@ registerLocaleData(uk);
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    CrmAuthModule,
     BrowserAnimationsModule,
     CrmLayoutModule,
     AppRoutingModule,

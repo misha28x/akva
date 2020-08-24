@@ -298,6 +298,38 @@
           "style": "scss"
         }
       }
+    },
+    "crm-auth": {
+      "projectType": "library",
+      "root": "libs/crm/auth",
+      "sourceRoot": "libs/crm/auth/src",
+      "prefix": "akva",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/crm/auth/tsconfig.lib.json",
+              "libs/crm/auth/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/crm/auth/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/crm/auth/jest.config.js",
+            "tsConfig": "libs/crm/auth/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/crm/auth/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {
