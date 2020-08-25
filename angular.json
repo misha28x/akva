@@ -298,6 +298,102 @@
           "style": "scss"
         }
       }
+    },
+    "crm-auth": {
+      "projectType": "library",
+      "root": "libs/crm/auth",
+      "sourceRoot": "libs/crm/auth/src",
+      "prefix": "akva",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/crm/auth/tsconfig.lib.json",
+              "libs/crm/auth/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/crm/auth/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/crm/auth/jest.config.js",
+            "tsConfig": "libs/crm/auth/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/crm/auth/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "shared-environments": {
+      "projectType": "library",
+      "root": "libs/shared/environments",
+      "sourceRoot": "libs/shared/environments/src",
+      "prefix": "akva",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/environments/tsconfig.lib.json",
+              "libs/shared/environments/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/shared/environments/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/environments/jest.config.js",
+            "tsConfig": "libs/shared/environments/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/shared/environments/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "shared-config": {
+      "projectType": "library",
+      "root": "libs/shared/config",
+      "sourceRoot": "libs/shared/config/src",
+      "prefix": "akva",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/config/tsconfig.lib.json",
+              "libs/shared/config/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/shared/config/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/config/jest.config.js",
+            "tsConfig": "libs/shared/config/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/shared/config/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {

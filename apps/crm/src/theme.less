@@ -50,9 +50,7 @@
 // Popover background color
 @popover-background: @component-background;
 @popover-customize-border-color: @border-color-split;
-@font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-  'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
-  'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+@font-family: 'Inter';
 @code-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier,
   monospace;
 @text-color: fade(@black, 65%);
@@ -76,8 +74,8 @@
 @heading-4-size: ceil(@font-size-base * 1.42);
 // https://github.com/ant-design/ant-design/issues/20210
 @line-height-base: 1.5715;
-@border-radius-base: 2px;
-@border-radius-sm: @border-radius-base;
+@border-radius-base: 6px;
+@border-radius-sm: 2px;
 
 // vertical paddings
 @padding-lg: 24px; // containers
@@ -94,8 +92,8 @@
 @margin-xss: 4px; // more small
 
 // height rules
-@height-base: 32px;
-@height-lg: 40px;
+@height-base: 40px;
+@height-lg: 54px;
 @height-sm: 24px;
 
 // vertical padding for all form controls
@@ -230,7 +228,7 @@
 @btn-link-ghost-color: @component-background;
 
 // Checkbox
-@checkbox-size: 16px;
+@checkbox-size: 20px;
 @checkbox-color: @primary-color;
 @checkbox-check-color: #fff;
 @checkbox-check-bg: @checkbox-check-color;
