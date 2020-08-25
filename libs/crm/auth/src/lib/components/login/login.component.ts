@@ -23,6 +23,7 @@ export class LoginComponent {
   constructor(private fb: FormBuilder) {}
 
   onSubmit() {
+    this.loginForm.markAllAsTouched();
     if (this.loginForm.invalid) {
       return;
     }
@@ -32,7 +33,7 @@ export class LoginComponent {
   }
 
   authorize({ login, password }) {
-    this.status = 'error';
+    this.status = 'loading';
   }
 
   private createLoginForm() {

@@ -1,55 +1,56 @@
-<section class="auth-content">
-  <div class="logo auth-content__logo">
-    <img class="logo__img" src="./assets/logo.png" alt="Логотип Аквастандарт" />
+<section class="content">
+  <div class="logo">
+    <img
+      class="logo__img"
+      src="./assets/logo-white.png"
+      alt="Логотип Аквастандарт"
+    />
   </div>
 
-  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form">
-    <h3 class="form__label">Авторизація</h3>
-    <nz-form-item>
-      <nz-form-control nzErrorTip="Будь ласка введіть логін">
-        <nz-input-group nzPrefixIcon="user">
-          <input
-            nz-input
-            type="text"
-            placeholder="Логін"
-            formControlName="login"
-          />
-        </nz-input-group>
-      </nz-form-control>
-    </nz-form-item>
+  <div class="content__card">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form">
+      <h3 class="form__label">Авторизація</h3>
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Будь ласка введіть логін">
+          <nz-input-group nzPrefixIcon="user">
+            <input
+              nz-input
+              type="text"
+              placeholder="Логін"
+              formControlName="login"
+            />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
 
-    <nz-form-item>
-      <nz-form-control nzErrorTip="Будь ласка введіть пароль">
-        <nz-input-group nzPrefixIcon="lock">
-          <input
-            nz-input
-            type="password"
-            placeholder="Пароль"
-            formControlName="password"
-          />
-        </nz-input-group>
-      </nz-form-control>
-    </nz-form-item>
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Будь ласка введіть пароль">
+          <nz-input-group nzPrefixIcon="lock">
+            <input
+              nz-input
+              type="password"
+              placeholder="Пароль"
+              formControlName="password"
+            />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
 
-    <div
-      class="form__section"
-      *ngIf="loginForm.errors && loginForm.errors['loginNotExist']"
-    >
-      {{ loginForm.errors | json }}
-    </div>
+      <div class="form__section">
+        <label nz-checkbox>
+          Запам'ятати мене
+        </label>
+      </div>
 
-    <button
-      nz-button
-      type="submit"
-      class="form__button"
-      [nzLoading]="loading"
-      [nzType]="'primary'"
-    >
-      Увійти
-    </button>
-  </form>
-</section>
-
-<section class="sidebar">
-  <div class="sidebar__text-block"></div>
+      <button
+        nz-button
+        type="submit"
+        class="form__button"
+        [nzLoading]="loading"
+        [nzType]="'primary'"
+      >
+        Увійти
+      </button>
+    </form>
+  </div>
 </section>

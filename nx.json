@@ -50,6 +50,12 @@
     },
     "crm-auth": {
       "tags": []
+    },
+    "shared-environments": {
+      "tags": ["scope:shared", "type:environments"]
+    },
+    "shared-config": {
+      "tags": []
     }
   }
 }

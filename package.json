@@ -68,8 +68,5 @@
     "@typescript-eslint/parser": "2.19.2",
     "@typescript-eslint/eslint-plugin": "2.19.2",
     "eslint-config-prettier": "6.0.0"
-  },
-  "wallaby": {
-    "autoDetect": true
   }
 }

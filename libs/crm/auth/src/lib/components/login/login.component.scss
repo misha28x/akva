@@ -1,66 +1,48 @@
 @import 'variables';
 
 $_content-bg: $white;
-$_content-width: $module-rem * 60;
-
-$_sidebar-bg: $blue-900;
-$_sidebar__title-fz: 80px;
+$_content-width: $module-rem * 50;
 
 :host {
-  height: 100%;
   display: flex;
+  align-items: center;
+  justify-content: center;
 
-  .auth-content {
+  background-size: cover;
+  background-position: top right;
+  background-image: url('../../../../../assets/src/lib/login-bg.jpg');
+
+  height: 100%;
+
+  .content {
+    display: flex;
     justify-content: center;
     flex-direction: column;
-    display: flex;
-    background-color: $_content-bg;
-    padding: 0 $padding-lg;
-    height: 100%;
-    width: $_content-width;
     flex-shrink: 0;
 
-    &__logo {
-      top: 0;
-      position: absolute;
-    }
-  }
+    .logo {
+      text-align: center;
+      transform: translateY(-#{$margin-lg * 2});
 
-  .sidebar {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    flex: 1;
-
-    background-size: cover;
-    background-position: top right;
-    background-image: url('../../assets/login-bg.jpg');
-
-    &__img {
-      height: 68px;
+      &__img {
+        height: 80px;
+      }
     }
 
-    &__text-block {
-      background-color: rgba($_sidebar-bg, 0.4);
-      height: 100%;
-      width: 100%;
-    }
-  }
+    &__card {
+      background-color: $_content-bg;
+      border-radius: $shape;
+      box-shadow: 0 0 0 100vh rgba($grey-900, 0.35);
 
-  .logo {
-    align-items: center;
-    display: flex;
-
-    &__img {
-      margin-left: -22px;
-      height: 160px;
+      padding: ($padding-lg * 2) $padding-lg;
+      width: $_content-width;
     }
   }
 
   .form {
     &__label {
       font-size: $x-large-fs;
-      margin-bottom: $margin-lg;
+      margin: 0 0 $margin-lg;
       letter-spacing: -0.3px;
     }
 
