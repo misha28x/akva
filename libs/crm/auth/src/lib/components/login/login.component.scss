@@ -20,13 +20,8 @@ $_content-width: $module-rem * 50;
     flex-direction: column;
     flex-shrink: 0;
 
-    .logo {
-      text-align: center;
+    &__logo {
       transform: translateY(-#{$margin-lg * 2});
-
-      &__img {
-        height: 80px;
-      }
     }
 
     &__card {
@@ -36,6 +31,14 @@ $_content-width: $module-rem * 50;
 
       padding: ($padding-lg * 2) $padding-lg;
       width: $_content-width;
+    }
+  }
+
+  .logo {
+    text-align: center;
+
+    &__img {
+      height: 80px;
     }
   }
 

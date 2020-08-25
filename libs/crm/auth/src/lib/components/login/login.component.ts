@@ -10,8 +10,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class LoginComponent {
   loginForm: FormGroup = this.createLoginForm();
 
-  private status: 'idle' | 'loading' | 'submitted' | 'error' = 'idle';
-
   get loading() {
     return this.status === 'loading';
   }
@@ -19,6 +17,8 @@ export class LoginComponent {
   get authFailed() {
     return this.status === 'error';
   }
+
+  private status: 'idle' | 'loading' | 'submitted' | 'error' = 'idle';
 
   constructor(private fb: FormBuilder) {}
 
@@ -28,12 +28,15 @@ export class LoginComponent {
       return;
     }
 
-    const formValue = this.loginForm.value;
-    this.authorize(formValue);
+    this.authorize(this.getCredentials());
   }
 
   authorize({ login, password }) {
     this.status = 'loading';
+  }
+
+  private getCredentials() {
+    return this.loginForm.value;
   }
 
   private createLoginForm() {
