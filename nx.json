@@ -56,6 +56,12 @@
     },
     "shared-config": {
       "tags": []
+    },
+    "shared-auth-models": {
+      "tags": []
+    },
+    "shared-mocks": {
+      "tags": []
     }
   }
 }
