@@ -1,12 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  HostBinding,
-  Component,
-  Input,
-} from '@angular/core';
-
-import { MenuLink } from '@akva/shared/menu';
-import { adminMenu } from '@akva/crm/consts';
+import { ChangeDetectionStrategy, HostBinding, Component } from '@angular/core';
 
 @Component({
   selector: 'akva-sidebar',

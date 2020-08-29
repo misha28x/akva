@@ -27,11 +27,7 @@
             "assets": [
               "apps/crm/src/favicon.ico",
               "apps/crm/src/assets",
-              {
-                "input": "apps/crm/src",
-                "glob": "mockServiceWorker.js",
-                "output": "/"
-              },
+              "apps/crm/src/mockServiceWorker.js",
               {
                 "input": "libs/crm/assets/src/lib",
                 "glob": "**/*",
@@ -171,32 +167,6 @@
           "options": {
             "jestConfig": "libs/crm/assets/jest.config.js",
             "tsConfig": "libs/crm/assets/tsconfig.spec.json",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "crm-consts": {
-      "root": "libs/crm/consts",
-      "sourceRoot": "libs/crm/consts/src",
-      "projectType": "library",
-      "schematics": {},
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/crm/consts/tsconfig.lib.json",
-              "libs/crm/consts/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/crm/consts/**/*"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/crm/consts/jest.config.js",
-            "tsConfig": "libs/crm/consts/tsconfig.spec.json",
             "passWithNoTests": true
           }
         }
@@ -449,6 +419,33 @@
           "options": {
             "jestConfig": "libs/shared/mocks/jest.config.js",
             "tsConfig": "libs/shared/mocks/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "crm-routes": {
+      "root": "libs/crm/routes",
+      "sourceRoot": "libs/crm/routes/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": [
+              "libs/crm/routes/tsconfig.lib.json",
+              "libs/crm/routes/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/crm/routes/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/crm/routes/jest.config.js",
+            "tsConfig": "libs/crm/routes/tsconfig.spec.json",
             "passWithNoTests": true
           }
         }

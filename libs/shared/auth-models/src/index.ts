@@ -1,1 +1,1 @@
-export * from './lib/shared-auth-models';
+export * from './lib/models';

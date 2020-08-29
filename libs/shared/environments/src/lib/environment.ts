@@ -2,12 +2,13 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-import { worker } from '@akva/shared/mocks';
-worker.start();
+if (process) {
+  
+}
 
 export const environment = {
   production: false,
-  api: 'https://api.com',
+  api: 'http://165.22.83.21:3000',
 };
 
 /*

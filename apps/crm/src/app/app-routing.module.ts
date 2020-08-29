@@ -1,12 +1,7 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
-const routes: Routes = [
-  {
-    path: 'login',
-    loadChildren: () => import('@akva/crm/auth').then((m) => m.CrmAuthModule),
-  },
-];
+import { routes } from '@akva/crm/routes';
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -33,9 +33,6 @@
     "crm-assets": {
       "tags": []
     },
-    "crm-consts": {
-      "tags": []
-    },
     "shared-typography": {
       "tags": ["scope:shared", "type:styles"]
     },
@@ -61,6 +58,9 @@
       "tags": []
     },
     "shared-mocks": {
+      "tags": []
+    },
+    "crm-routes": {
       "tags": []
     }
   }

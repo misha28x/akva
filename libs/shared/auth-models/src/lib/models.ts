@@ -6,6 +6,11 @@ export interface LoginResponse {
   refreshToken: string;
 }
 
+export interface Credentials {
+  username: string;
+  password: string;
+}
+
 export type UserRole = 'Admin' | 'Operator' | 'Metrology' | 'Unauthorized';
 
 export const getUserRole = (permission: number): UserRole => {
