@@ -1,4 +1,4 @@
-export interface LoginResponse {
+export interface AuthData {
   id: string;
   name: string;
   token: string;

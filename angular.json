@@ -450,6 +450,33 @@
           }
         }
       }
+    },
+    "shared-response": {
+      "root": "libs/shared/response",
+      "sourceRoot": "libs/shared/response/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": [
+              "libs/shared/response/tsconfig.lib.json",
+              "libs/shared/response/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/shared/response/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/response/jest.config.js",
+            "tsConfig": "libs/shared/response/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

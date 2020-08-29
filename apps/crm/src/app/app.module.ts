@@ -18,6 +18,7 @@ import uk from '@angular/common/locales/uk';
 registerLocaleData(uk);
 
 import { AppRoutingModule } from './app-routing.module';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [AppComponent],
@@ -29,6 +30,7 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserAnimationsModule,
     CrmLayoutModule,
     AppRoutingModule,
+    StoreModule.forRoot({}, {}),
   ],
   providers: [{ provide: NZ_I18N, useValue: uk_UA }, API_PROVIDER],
   bootstrap: [AppComponent],
