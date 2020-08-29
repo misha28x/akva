@@ -1,23 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
 
-import { LoginComponent } from './login.component';
+import { LoginFormComponent } from './login-form.component';
 
-describe('LoginComponent', () => {
-  let component: LoginComponent;
-  let fixture: ComponentFixture<LoginComponent>;
+describe('LoginFormComponent', () => {
+  let component: LoginFormComponent;
+  let fixture: ComponentFixture<LoginFormComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [LoginComponent],
-      imports: [FormsModule, ReactiveFormsModule],
-      schemas: [NO_ERRORS_SCHEMA],
+      declarations: [LoginFormComponent],
     }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LoginComponent);
+    fixture = TestBed.createComponent(LoginFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -26,31 +22,31 @@ describe('LoginComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should be invalid with empty fields', () => {
+  it('should be invalid while empty', () => {
     expect(component.loginForm.valid).toBeFalsy();
   });
 
   it('should not submit with invalid form', () => {
-    const authorize = jest.spyOn(component, 'authorize');
+    const submitted = jest.spyOn(component.submitted, 'emit');
     const submitBtn = fixture.debugElement.nativeElement.querySelector(
       '.form__button'
     );
 
     submitBtn.click();
 
-    expect(authorize).not.toBeCalled();
+    expect(submitted).not.toBeCalled();
   });
 
   it('should submit with valid form', () => {
-    const authorize = jest.spyOn(component, 'authorize');
+    const submitted = jest.spyOn(component.submitted, 'emit');
     const submitBtn = fixture.debugElement.nativeElement.querySelector(
       '.form__button'
     );
 
-    component.loginForm.controls['login'].setValue('admin');
+    component.loginForm.controls['login-page'].setValue('admin');
     component.loginForm.controls['password'].setValue('admin');
     submitBtn.click();
 
-    expect(authorize).toBeCalledWith({ login: 'admin', password: 'admin' });
+    expect(submitted).toBeCalledWith({ login: 'admin', password: 'admin' });
   });
 });

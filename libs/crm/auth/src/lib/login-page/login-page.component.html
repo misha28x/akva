@@ -1,0 +1,16 @@
+<section class="content">
+  <div class="logo content__logo">
+    <img
+      class="logo__img"
+      alt="Логотип Аквастандарт"
+      src="./assets/logo-white.png"
+    />
+  </div>
+
+  <div class="content__card">
+    <akva-login-form
+      [loading]="loading"
+      (submitted)="onSubmit($event)"
+    ></akva-login-form>
+  </div>
+</section>

@@ -25,7 +25,10 @@
       "@akva/crm/auth": ["libs/crm/auth/src/index.ts"],
       "@akva/crm/config": ["libs/crm/config/src/index.ts"],
       "@akva/shared/environments": ["libs/shared/environments/src/index.ts"],
-      "@akva/shared/config": ["libs/shared/config/src/index.ts"]
+      "@akva/shared/config": ["libs/shared/config/src/index.ts"],
+      "@akva/shared/auth-models": ["libs/shared/auth-models/src/index.ts"],
+      "@akva/shared/mocks": ["libs/shared/mocks/src/index.ts"],
+      "@akva/crm/routes": ["libs/crm/routes/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

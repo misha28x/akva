@@ -33,9 +33,6 @@
     "crm-assets": {
       "tags": []
     },
-    "crm-consts": {
-      "tags": []
-    },
     "shared-typography": {
       "tags": ["scope:shared", "type:styles"]
     },
@@ -55,6 +52,15 @@
       "tags": ["scope:shared", "type:environments"]
     },
     "shared-config": {
+      "tags": []
+    },
+    "shared-auth-models": {
+      "tags": []
+    },
+    "shared-mocks": {
+      "tags": []
+    },
+    "crm-routes": {
       "tags": []
     }
   }

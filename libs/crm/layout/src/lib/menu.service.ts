@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
-
-import { adminMenu } from '@akva/crm/consts';
-import { MenuLink } from '@akva/shared/menu';
+import { MenuLink, adminMenu } from '@akva/shared/menu';
 
 @Injectable({
   providedIn: 'root',

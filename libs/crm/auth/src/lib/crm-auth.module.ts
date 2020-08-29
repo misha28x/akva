@@ -5,8 +5,9 @@ import { CrmAuthRoutingModule } from './crm-auth-routing.module';
 
 import { NzButtonModule, NzCheckboxModule, NzFormModule, NzInputModule } from 'ng-zorro-antd';
 
-import { LoginComponent } from './components/login/login.component';
+import { LoginPageComponent } from './login-page/login-page.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginFormComponent } from './login-form/login-form.component';
 
 @NgModule({
   imports: [
@@ -19,7 +20,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NzButtonModule,
     NzCheckboxModule
   ],
-  declarations: [LoginComponent],
-  exports: [LoginComponent],
+  declarations: [LoginPageComponent, LoginFormComponent],
+  exports: [LoginPageComponent],
 })
 export class CrmAuthModule {}

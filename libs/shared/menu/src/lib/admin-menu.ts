@@ -1,11 +1,11 @@
-import { MenuLink } from '@akva/shared/menu';
+import { MenuLink } from './model';
 
 export const adminMenu: MenuLink[] = [
   {
     title: 'Заявки Лабораторії',
     icon: 'experiment',
     routing: 'lab-requests',
-    counter: 10
+    counter: 10,
   },
   {
     title: 'Протоколи',
@@ -21,7 +21,7 @@ export const adminMenu: MenuLink[] = [
     title: 'Планування Завдання',
     icon: 'calendar',
     routing: 'tasks-planing',
-    counter: 20
+    counter: 20,
   },
   {
     title: 'Завдання Для Станцій',
