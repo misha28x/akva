@@ -1,4 +1,8 @@
-import { setupWorker } from 'msw';
 import { handlers } from './handlers';
+import { setupWorker } from 'msw';
 
-export const worker = setupWorker(...handlers);
+const isBrowser = !(window as any)?.process;
+
+export const worker = isBrowser
+  ? setupWorker(...handlers)
+  : { start: () => null };

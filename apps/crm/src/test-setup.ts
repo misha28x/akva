@@ -1,14 +1,20 @@
 import 'jest-preset-angular';
-// import { server } from '@akva/shared/mocks';
-//
-// beforeAll(() => {
-//   server.listen();
-// });
-//
-// afterEach(() => {
-//   server.resetHandlers();
-// });
-//
-// afterAll(() => {
-//   server.close();
-// });
+
+import { handlers } from '@akva/shared/mocks';
+import { setupServer } from 'msw/node';
+
+describe('Mocks', async () => {
+  const server = setupServer(...handlers);
+
+  beforeAll(() => {
+    server.listen();
+  });
+
+  afterEach(() => {
+    server.resetHandlers();
+  });
+
+  afterAll(() => {
+    server.close();
+  });
+});
