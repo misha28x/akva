@@ -15,8 +15,11 @@ import { AUTH_FEATURE_KEY, authReducer } from './state/auth.reducer';
 
 import { LoginPageComponent } from './login-page/login-page.component';
 import { LoginFormComponent } from './login-form/login-form.component';
+
 import { CrmAuthRoutingModule } from './crm-auth-routing.module';
 import { AuthFacadeService } from './state/auth-facade.service';
+import { EffectsModule } from '@ngrx/effects';
+import { AuthEffects } from './state/auth.effects';
 
 @NgModule({
   imports: [
@@ -28,6 +31,7 @@ import { AuthFacadeService } from './state/auth-facade.service';
     NzCheckboxModule,
     ReactiveFormsModule,
     CrmAuthRoutingModule,
+    EffectsModule.forFeature([AuthEffects]),
     StoreModule.forFeature(AUTH_FEATURE_KEY, authReducer),
   ],
   declarations: [LoginPageComponent, LoginFormComponent],

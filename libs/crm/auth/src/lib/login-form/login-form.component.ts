@@ -16,7 +16,9 @@ import { Credentials } from '@akva/shared/auth-models';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginFormComponent {
+  @Input() error: string;
   @Input() loading: boolean;
+
   @Output() submitted = new EventEmitter<Credentials>();
 
   loginForm: FormGroup = this.createLoginForm();

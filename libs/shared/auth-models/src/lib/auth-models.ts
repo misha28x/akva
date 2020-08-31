@@ -2,12 +2,12 @@ export interface AuthData {
   id: string;
   name: string;
   token: string;
-  role: number;
+  permission: number;
   refreshToken: string;
 }
 
 export interface Credentials {
-  username: string;
+  login: string;
   password: string;
 }
 

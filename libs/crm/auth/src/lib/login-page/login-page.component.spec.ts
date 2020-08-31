@@ -11,15 +11,17 @@ import { By } from '@angular/platform-browser';
 import { of, asyncScheduler } from 'rxjs';
 
 import { API_PROVIDER } from '@akva/shared/config';
+
 import { LoginPageComponent } from './login-page.component';
 import { LoginFormComponent } from '../login-form/login-form.component';
-import { AuthService } from '../services/auth.service';
+import { AuthFacadeService } from '@akva/crm/auth';
 
 import { Credentials } from '@akva/shared/auth-models';
 
-const authServiceFactory = () => ({
-  login: jest.fn().mockReturnValue(of(true, asyncScheduler)),
-  logout: jest.fn().mockReturnValue(of(true)),
+const authFacadeFactory = (): Partial<AuthFacadeService> => ({
+  login: jest.fn(),
+  loading$: of(false, asyncScheduler),
+  error$: of('', asyncScheduler),
 });
 
 describe('LoginPageComponent', () => {
@@ -34,7 +36,7 @@ describe('LoginPageComponent', () => {
       imports: [FormsModule, ReactiveFormsModule],
       providers: [
         API_PROVIDER,
-        { provide: AuthService, useValue: authServiceFactory() },
+        { provide: AuthFacadeService, useValue: authFacadeFactory() },
       ],
       schemas: [NO_ERRORS_SCHEMA],
     }).compileComponents();
@@ -44,12 +46,11 @@ describe('LoginPageComponent', () => {
     credentials = { password: 'admin', username: 'admin' };
     fixture = TestBed.createComponent(LoginPageComponent);
     component = fixture.componentInstance;
-    service = TestBed.inject(AuthService);
+    service = TestBed.inject(AuthFacadeService);
   });
 
   afterEach(() => {
     service.login.mockRestore();
-    service.logout.mockRestore();
   });
 
   it('should create', () => {
@@ -64,16 +65,5 @@ describe('LoginPageComponent', () => {
     tick();
 
     expect(service.login).toBeCalledWith(credentials);
-  }));
-
-  it('should change loading state to true while authorizing', fakeAsync(() => {
-    const form = fixture.debugElement.query(By.css('akva-login-form'))
-      .componentInstance as LoginFormComponent;
-
-    form.submitted.emit(credentials);
-
-    expect(component.loading).toBe(true);
-    tick();
-    expect(component.loading).toBe(false);
   }));
 });

@@ -477,6 +477,38 @@
           }
         }
       }
+    },
+    "crm-task-planning": {
+      "projectType": "library",
+      "root": "libs/crm/task-planing",
+      "sourceRoot": "libs/crm/task-planing/src",
+      "prefix": "akva",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/crm/task-planing/tsconfig.lib.json",
+              "libs/crm/task-planing/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/crm/task-planing/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/crm/task-planing/jest.config.js",
+            "tsConfig": "libs/crm/task-planing/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/crm/task-planing/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {

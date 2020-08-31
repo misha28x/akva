@@ -9,7 +9,8 @@
 
   <div class="content__card">
     <akva-login-form
-      [loading]="loading"
+        [error]="error$ | async"
+      [loading]="loading$ | async"
       (submitted)="onSubmit($event)"
     ></akva-login-form>
   </div>

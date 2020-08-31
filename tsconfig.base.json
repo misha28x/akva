@@ -29,7 +29,8 @@
       "@akva/shared/auth-models": ["libs/shared/auth-models/src/index.ts"],
       "@akva/shared/mocks": ["libs/shared/mocks/src/index.ts"],
       "@akva/crm/routes": ["libs/crm/routes/src/index.ts"],
-      "@akva/shared/response": ["libs/shared/response/src/index.ts"]
+      "@akva/shared/response": ["libs/shared/response/src/index.ts"],
+      "@akva/crm/task-planning": ["libs/crm/task-planning/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

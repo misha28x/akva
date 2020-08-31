@@ -1,5 +1,12 @@
 <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form">
   <h3 class="form__label">Авторизація</h3>
+
+  <div *ngIf="error" class="section error">
+    <h3 class="error__title">
+      {{ error }}
+    </h3>
+  </div>
+
   <nz-form-item>
     <nz-form-control nzErrorTip="Будь ласка введіть логін">
       <nz-input-group nzPrefixIcon="user">

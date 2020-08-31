@@ -1,5 +1,42 @@
-<div class="logo">
-  <img class="logo__img" src="./assets/logo-white.png" alt="Логотип Аквастандарт" />
+<div class="header">
+  <img
+    class="header__logo"
+    src="./assets/logo-white.png"
+    alt="Логотип Аквастандарт"
+  />
+
+  <div class="toggle-btn">
+    <akva-icon [icon]="'vertical-right'"></akva-icon>
+  </div>
 </div>
 
-<ng-content></ng-content>
+<div class="user">
+  <div class="user-icon">
+    <akva-icon [icon]="'user'"></akva-icon>
+  </div>
+
+  <div class="user__details">
+    <span class="user__name">Адміністратор</span>
+    <a class="user__link" href="">Переглянути профіль</a>
+  </div>
+
+  <a href="" class="user__logout-icon">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
+      />
+    </svg>
+  </a>
+</div>
+
+<div class="menu">
+  <ng-content></ng-content>
+</div>

@@ -1,4 +1,4 @@
-export interface Response<Data> {
-  error: string;
+export interface Response<Data = any> {
+  errorMsg: string;
   data: Data;
 }

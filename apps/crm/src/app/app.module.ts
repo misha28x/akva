@@ -8,21 +8,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CrmAuthModule } from '@akva/crm/auth';
 import { CrmLayoutModule } from '@akva/crm/layout';
-import { API_PROVIDER } from '@akva/shared/config';
-
-import { NZ_I18N } from 'ng-zorro-antd/i18n';
-import { uk_UA } from 'ng-zorro-antd/i18n';
-
-import { registerLocaleData } from '@angular/common';
-import uk from '@angular/common/locales/uk';
-registerLocaleData(uk);
 
 import { AppRoutingModule } from './app-routing.module';
-import { StoreModule } from '@ngrx/store';
+import { CoreModule } from './core.module';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
+    CoreModule,
     BrowserModule,
     FormsModule,
     HttpClientModule,
@@ -30,9 +23,7 @@ import { StoreModule } from '@ngrx/store';
     BrowserAnimationsModule,
     CrmLayoutModule,
     AppRoutingModule,
-    StoreModule.forRoot({}, {}),
   ],
-  providers: [{ provide: NZ_I18N, useValue: uk_UA }, API_PROVIDER],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

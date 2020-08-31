@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
-import { AuthService } from '../services/auth.service';
 import { Credentials } from '@akva/shared/auth-models';
+import { AuthFacadeService } from '../state/auth-facade.service';
 
 @Component({
   selector: 'akva-login',
@@ -9,20 +9,12 @@ import { Credentials } from '@akva/shared/auth-models';
   styleUrls: ['./login-page.component.scss'],
 })
 export class LoginPageComponent {
-  get loading() {
-    return this.status === 'loading';
-  }
+  error$ = this.auth.error$;
+  loading$ = this.auth.loading$;
 
-  private status: 'idle' | 'loading' | 'submitted' | 'error' = 'idle';
-
-  constructor(private auth: AuthService) {}
+  constructor(private auth: AuthFacadeService) {}
 
   onSubmit(credentials: Credentials) {
-    this.status = 'loading';
-    this.authorize(credentials).subscribe(() => (this.status = 'idle'));
-  }
-
-  private authorize(credentials: Credentials) {
-    return this.auth.login(credentials);
+    this.auth.login(credentials);
   }
 }

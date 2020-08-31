@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { DefaultLayoutComponent } from '@akva/crm/layout';
 
 export const routes: Routes = [
   {
@@ -7,7 +8,23 @@ export const routes: Routes = [
   },
   {
     path: 'admin',
-    children: [],
+    component: DefaultLayoutComponent,
+    children: [
+      {
+        path: 'tasks-planning',
+        loadChildren: () =>
+          import('@akva/crm/task-planning').then(
+            (m) => m.CrmTaskPlanningModule
+          ),
+      },
+      {
+        path: 'lab-requests',
+        loadChildren: () =>
+          import('@akva/crm/task-planning').then(
+            (m) => m.CrmTaskPlanningModule
+          ),
+      },
+    ],
   },
   {
     path: 'manager',

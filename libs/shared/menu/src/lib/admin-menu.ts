@@ -20,7 +20,7 @@ export const adminMenu: MenuLink[] = [
   {
     title: 'Планування Завдання',
     icon: 'calendar',
-    routing: 'tasks-planing',
+    routing: 'tasks-planning',
     counter: 20,
   },
   {
