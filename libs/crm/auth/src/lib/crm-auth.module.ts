@@ -13,8 +13,8 @@ import {
 import { StoreModule } from '@ngrx/store';
 import { AUTH_FEATURE_KEY, authReducer } from './state/auth.reducer';
 
-import { LoginPageComponent } from './login-page/login-page.component';
-import { LoginFormComponent } from './login-form/login-form.component';
+import { LoginPageComponent } from './containers/login-page.component';
+import { LoginFormComponent } from './components/login-form.component';
 
 import { CrmAuthRoutingModule } from './crm-auth-routing.module';
 import { AuthFacadeService } from './state/auth-facade.service';

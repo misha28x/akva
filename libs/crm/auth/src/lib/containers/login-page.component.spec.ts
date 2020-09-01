@@ -13,7 +13,7 @@ import { of, asyncScheduler } from 'rxjs';
 import { API_PROVIDER } from '@akva/shared/config';
 
 import { LoginPageComponent } from './login-page.component';
-import { LoginFormComponent } from '../login-form/login-form.component';
+import { LoginFormComponent } from '../components/login-form.component';
 import { AuthFacadeService } from '@akva/crm/auth';
 
 import { Credentials } from '@akva/shared/auth-models';
