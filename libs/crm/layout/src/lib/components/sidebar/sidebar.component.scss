@@ -4,21 +4,110 @@ $_sidebar-bg: $grey-700;
 
 $_logo-bg: $grey-900;
 $_logo-height: $header-height;
-$_logo__img-height: 48px;
+$_logo__img-height: 42px;
+
+$_user-bg: $_logo-bg;
 
 :host {
-  background-color: $_sidebar-bg;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
+  background-color: $_sidebar-bg;
   width: $sidebar-width;
   height: 100%;
 
-  .logo {
+  .menu {
+    flex: 1;
+    padding: 0 $padding-md;
+  }
+
+  .header {
     background-color: $_logo-bg;
     padding: $padding-xs $padding-md;
     height: $_logo-height;
 
-    &__img {
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+
+    &__logo {
       height: $_logo__img-height;
+      margin: 0 -8px;
     }
+  }
+
+  .toggle-btn {
+    color: $white;
+    cursor: pointer;
+    font-size: 1.5em;
+    transition: opacity $animation-duration-base $ease-in-out;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  .user {
+    display: flex;
+    align-items: center;
+    padding: 0 $padding-lg;
+    margin: $margin-lg 0;
+
+    &__name {
+      color: $white;
+      margin: 0 0 $margin-xss;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+
+    &__details {
+      justify-content: space-between;
+      flex-direction: column;
+      padding: 0 $padding-md;
+      display: flex;
+      height: 100%;
+      flex: 1;
+    }
+
+    &__link {
+      color: $grey-300;
+      font-weight: 600;
+      font-size: 0.85em;
+      letter-spacing: 0.2px;
+      transition: opacity $animation-duration-base $ease-in-out;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    &__logout-icon {
+      cursor: pointer;
+      color: $grey-400;
+      font-size: 1.2em;
+
+      height: 28px;
+      width: 28px;
+
+      transition: color $animation-duration-base $ease-in-out;
+
+      &:hover {
+        color: $grey-100;
+      }
+    }
+  }
+
+  .user-icon {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+    background: rgba($white, 0.2);
+    border-radius: 50%;
+    color: $grey-200;
+    font-size: 1.8em;
+    height: 40px;
+    width: 40px;
   }
 }

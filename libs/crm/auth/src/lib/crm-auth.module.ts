@@ -1,24 +1,37 @@
 import { NgModule } from '@angular/core';
+
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import {
+  NzButtonModule,
+  NzCheckboxModule,
+  NzFormModule,
+  NzInputModule,
+} from 'ng-zorro-antd';
+
+import { StoreModule } from '@ngrx/store';
+
+import { LoginPageComponent } from './containers/login-page.component';
+import { LoginFormComponent } from './components/login-form.component';
 
 import { CrmAuthRoutingModule } from './crm-auth-routing.module';
-
-import { NzButtonModule, NzCheckboxModule, NzFormModule, NzInputModule } from 'ng-zorro-antd';
-
-import { LoginPageComponent } from './login-page/login-page.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { LoginFormComponent } from './login-form/login-form.component';
+import { EffectsModule } from '@ngrx/effects';
+import { AuthEffects } from './state/effects/auth.effects';
+import * as fromAuth from './state/reducers';
 
 @NgModule({
   imports: [
-    CommonModule,
     FormsModule,
-    NzInputModule,
+    CommonModule,
     NzFormModule,
+    NzInputModule,
+    NzButtonModule,
+    NzCheckboxModule,
     ReactiveFormsModule,
     CrmAuthRoutingModule,
-    NzButtonModule,
-    NzCheckboxModule
+    StoreModule.forFeature(fromAuth.AUTH_FEATURE_KEY, fromAuth.reducers),
+    EffectsModule.forFeature([AuthEffects]),
   ],
   declarations: [LoginPageComponent, LoginFormComponent],
   exports: [LoginPageComponent],

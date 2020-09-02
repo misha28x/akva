@@ -4,7 +4,11 @@ import { API_URL } from '@akva/shared/config';
 
 import { JwtService } from './jwt.service';
 import { HttpClient } from '@angular/common/http';
-import { Credentials } from '@akva/shared/auth-models';
+
+import { map, tap } from 'rxjs/operators';
+
+import { AuthData, Credentials } from '@akva/shared/auth-models';
+import { Response } from '@akva/shared/response';
 
 @Injectable({
   providedIn: 'root',
@@ -18,10 +22,15 @@ export class AuthService {
 
   login(credentials: Credentials) {
     const url = `${this.apiUrl}/login`;
-    return this.http.post(url, credentials);
+    return this.http.post<Response<AuthData>>(url, credentials).pipe(
+      tap((res) => this.storeUser(res.data)),
+      map((res) => res.data.user)
+    );
   }
 
   logOut() {}
 
-  private storeUser() {}
+  private storeUser(authData: AuthData) {
+    this.jwt.saveToken(authData.token);
+  }
 }

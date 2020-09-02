@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginPageComponent should compile 1`] = `
+<akva-login
+  error$={[Function Store]}
+  loading$={[Function Store]}
+  store={[Function MockStore]}
+>
+  <section
+    class="content"
+  >
+    <div
+      class="logo content__logo"
+    >
+      <img
+        alt="Логотип Аквастандарт"
+        class="logo__img"
+        src="./assets/logo-white.png"
+      />
+    </div>
+    <div
+      class="content__card"
+    >
+      <akva-login-form />
+    </div>
+  </section>
+</akva-login>
+`;
