@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 
-import { login } from '../state/auth.actions';
-import { getError, getLoading } from '../state/auth.selectors';
+import { LoginPageActions } from '../state/actions';
+import * as fromAuth from '../state/reducers';
 
 import { Credentials } from '@akva/shared/auth-models';
 
@@ -12,12 +12,12 @@ import { Credentials } from '@akva/shared/auth-models';
   styleUrls: ['./login-page.component.scss'],
 })
 export class LoginPageComponent {
-  error$ = this.store.pipe(select(getError));
-  loading$ = this.store.pipe(select(getLoading));
+  error$ = this.store.pipe(select(fromAuth.selectLoginPageError));
+  loading$ = this.store.pipe(select(fromAuth.selectLoginPagePending));
 
-  constructor(private store: Store) {}
+  constructor(private store: Store<fromAuth.State>) {}
 
   onSubmit(credentials: Credentials) {
-    this.store.dispatch(login(credentials));
+    this.store.dispatch(LoginPageActions.login(credentials));
   }
 }

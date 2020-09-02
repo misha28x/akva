@@ -1,69 +1,54 @@
-import {
-  async,
-  ComponentFixture,
-  fakeAsync,
-  TestBed,
-  tick,
-} from '@angular/core/testing';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { By } from '@angular/platform-browser';
-import { of, asyncScheduler } from 'rxjs';
 
-import { API_PROVIDER } from '@akva/shared/config';
+import { MockStore, provideMockStore } from '@ngrx/store/testing';
+
+import * as fromAuth from '../state/reducers';
+import { LoginPageActions } from '../state/actions';
 
 import { LoginPageComponent } from './login-page.component';
-import { LoginFormComponent } from '../components/login-form.component';
-import { AuthFacadeService } from '@akva/crm/auth';
-
 import { Credentials } from '@akva/shared/auth-models';
 
-const authFacadeFactory = (): Partial<AuthFacadeService> => ({
-  login: jest.fn(),
-  loading$: of(false, asyncScheduler),
-  error$: of('', asyncScheduler),
-});
-
 describe('LoginPageComponent', () => {
-  let credentials: Credentials;
-  let component: LoginPageComponent;
   let fixture: ComponentFixture<LoginPageComponent>;
-  let service;
+  let component: LoginPageComponent;
+  let store: MockStore;
 
-  beforeEach(async(() => {
+  beforeEach(async () => {
     TestBed.configureTestingModule({
-      declarations: [LoginPageComponent, LoginFormComponent],
-      imports: [FormsModule, ReactiveFormsModule],
-      providers: [
-        API_PROVIDER,
-        { provide: AuthFacadeService, useValue: authFacadeFactory() },
-      ],
+      declarations: [LoginPageComponent],
       schemas: [NO_ERRORS_SCHEMA],
-    }).compileComponents();
-  }));
+      providers: [
+        provideMockStore({
+          selectors: [
+            {
+              selector: fromAuth.selectLoginPagePending,
+              value: false,
+            },
+          ],
+        }),
+      ],
+    });
 
-  beforeEach(() => {
-    credentials = { password: 'admin', username: 'admin' };
     fixture = TestBed.createComponent(LoginPageComponent);
     component = fixture.componentInstance;
-    service = TestBed.inject(AuthFacadeService);
+    store = TestBed.inject(MockStore);
+
+    spyOn(store, 'dispatch');
   });
 
-  afterEach(() => {
-    service.login.mockRestore();
+  it('should compile', () => {
+    fixture.detectChanges();
+
+    expect(fixture).toMatchSnapshot();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should dispatch login action on submit', () => {
+    const credentials: Credentials = { password: 'admin', login: 'admin' };
+    const action = LoginPageActions.login(credentials);
+
+    component.onSubmit(credentials);
+
+    expect(store.dispatch).toHaveBeenCalledWith(action);
   });
-
-  it('should authorize when credentials is submitted', fakeAsync(() => {
-    const form = fixture.debugElement.query(By.css('akva-login-form'))
-      .componentInstance as LoginFormComponent;
-
-    form.submitted.emit(credentials);
-    tick();
-
-    expect(service.login).toBeCalledWith(credentials);
-  }));
 });

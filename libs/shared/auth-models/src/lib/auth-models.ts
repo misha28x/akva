@@ -1,9 +1,16 @@
 export interface AuthData {
-  id: string;
-  name: string;
+  user: User;
   token: string;
-  permission: number;
-  refreshToken: string;
+}
+
+export interface User {
+  name: string;
+  userId?: string;
+  district?: string;
+  createFor?: string;
+  permission: UserPermission;
+  serviceProvider?: number;
+  serviceType?: ServiceTypes;
 }
 
 export interface Credentials {
@@ -11,17 +18,15 @@ export interface Credentials {
   password: string;
 }
 
-export type UserRole = 'Admin' | 'Operator' | 'Metrology' | 'Unauthorized';
+export const enum UserPermission {
+  Admin = 1,
+  Operator = 2,
+  Metrology = 3,
+  Unauthorized = 4,
+}
 
-export const getUserRole = (permission: number): UserRole => {
-  switch (permission) {
-    case 1:
-      return 'Admin';
-    case 2:
-      return 'Operator';
-    case 3:
-      return 'Metrology';
-    default:
-      return 'Unauthorized';
-  }
-};
+export enum ServiceTypes {
+  Cold = 1,
+  Hot = 2,
+  Both = 3,
+}

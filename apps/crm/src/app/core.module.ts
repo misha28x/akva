@@ -14,14 +14,7 @@ import uk from '@angular/common/locales/uk';
 registerLocaleData(uk);
 
 @NgModule({
-  imports: [
-    EffectsModule.forRoot([]),
-    StoreModule.forRoot({}, {}),
-    StoreDevtoolsModule.instrument({
-      maxAge: 25,
-      logOnly: environment.production,
-    }),
-  ],
+  imports: [],
   providers: [
     { provide: NZ_I18N, useValue: uk_UA },
     API_PROVIDER,

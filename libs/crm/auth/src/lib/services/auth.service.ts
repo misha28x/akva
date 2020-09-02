@@ -5,7 +5,7 @@ import { API_URL } from '@akva/shared/config';
 import { JwtService } from './jwt.service';
 import { HttpClient } from '@angular/common/http';
 
-import { catchError, map, tap } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 
 import { AuthData, Credentials } from '@akva/shared/auth-models';
 import { Response } from '@akva/shared/response';
@@ -23,8 +23,8 @@ export class AuthService {
   login(credentials: Credentials) {
     const url = `${this.apiUrl}/login`;
     return this.http.post<Response<AuthData>>(url, credentials).pipe(
-      map((res) => res.data),
-      tap((authData) => this.storeUser(authData))
+      tap((res) => this.storeUser(res.data)),
+      map((res) => res.data.user)
     );
   }
 

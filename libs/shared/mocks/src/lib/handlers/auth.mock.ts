@@ -10,12 +10,15 @@ export const handlers = (api) => [
         ctx.delay(1000),
         ctx.json({
           data: {
-            id: 'f79e82e8-c34a-4dc7-a49e-9fadc0979fda',
-            login,
-            firstName: 'John',
-            lastName: 'Maverick',
-            token: '1111',
-            permission: 1,
+            user: {
+              district: 'Луцький',
+              permission: 1,
+              serviceProvider: 80334,
+              serviceType: 3,
+              userId: 1,
+              username: 'Адміністратор',
+            },
+            token: 1,
           },
         })
       );

@@ -1,6 +1,14 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LoginFormComponent } from './login-form.component';
+import {
+  NzButtonComponent,
+  NzButtonModule,
+  NzFormModule,
+  NzInputModule,
+} from 'ng-zorro-antd';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('LoginFormComponent', () => {
   let component: LoginFormComponent;
@@ -8,6 +16,13 @@ describe('LoginFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        NzFormModule,
+        NzInputModule,
+        NzButtonModule,
+        HttpClientModule,
+        ReactiveFormsModule,
+      ],
       declarations: [LoginFormComponent],
     }).compileComponents();
   }));
@@ -43,7 +58,7 @@ describe('LoginFormComponent', () => {
       '.form__button'
     );
 
-    component.loginForm.controls['login-page'].setValue('admin');
+    component.loginForm.controls['login'].setValue('admin');
     component.loginForm.controls['password'].setValue('admin');
     submitBtn.click();
 

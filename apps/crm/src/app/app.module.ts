@@ -7,7 +7,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CrmAuthModule } from '@akva/crm/auth';
-import { CrmLayoutModule } from '@akva/crm/layout';
+
+import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '@akva/shared/environments';
 
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core.module';
@@ -15,14 +19,19 @@ import { CoreModule } from './core.module';
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    CoreModule,
-    BrowserModule,
     FormsModule,
+    BrowserModule,
+    CoreModule,
     HttpClientModule,
-    CrmAuthModule,
     BrowserAnimationsModule,
-    CrmLayoutModule,
+    CrmAuthModule,
     AppRoutingModule,
+    EffectsModule.forRoot([]),
+    StoreModule.forRoot({}, {}),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+      logOnly: environment.production,
+    }),
   ],
   bootstrap: [AppComponent],
 })

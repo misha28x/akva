@@ -12,16 +12,7 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginPageComponent,
-  },
-  {
-    path: 'admin',
-    children: [
-      {
-        path: '',
-        component: LoginPageComponent,
-      },
-    ],
-  },
+  }
 ];
 
 @NgModule({

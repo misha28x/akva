@@ -11,15 +11,14 @@ import {
 } from 'ng-zorro-antd';
 
 import { StoreModule } from '@ngrx/store';
-import { AUTH_FEATURE_KEY, authReducer } from './state/auth.reducer';
 
 import { LoginPageComponent } from './containers/login-page.component';
 import { LoginFormComponent } from './components/login-form.component';
 
 import { CrmAuthRoutingModule } from './crm-auth-routing.module';
-import { AuthFacadeService } from './state/auth-facade.service';
 import { EffectsModule } from '@ngrx/effects';
-import { AuthEffects } from './state/auth.effects';
+import { AuthEffects } from './state/effects/auth.effects';
+import * as fromAuth from './state/reducers';
 
 @NgModule({
   imports: [
@@ -31,11 +30,10 @@ import { AuthEffects } from './state/auth.effects';
     NzCheckboxModule,
     ReactiveFormsModule,
     CrmAuthRoutingModule,
+    StoreModule.forFeature(fromAuth.AUTH_FEATURE_KEY, fromAuth.reducers),
     EffectsModule.forFeature([AuthEffects]),
-    StoreModule.forFeature(AUTH_FEATURE_KEY, authReducer),
   ],
   declarations: [LoginPageComponent, LoginFormComponent],
   exports: [LoginPageComponent],
-  providers: [AuthFacadeService],
 })
 export class CrmAuthModule {}
