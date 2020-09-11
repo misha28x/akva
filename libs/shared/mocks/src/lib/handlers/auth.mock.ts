@@ -4,7 +4,7 @@ import { Credentials } from '@akva/shared/auth-models';
 export const handlers = (api) => [
   rest.post(`${api}/login`, (req, res, ctx) => {
     const { login } = req.body as Credentials;
-    console.log(req.body);
+
     if (login === 'admin') {
       return res(
         ctx.delay(1000),
