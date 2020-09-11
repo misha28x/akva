@@ -140,8 +140,8 @@ $text-color: $grey-900;
 // LINK
 //////////////////////////////////////////////
 $link-color: $primary-color;
-$link-hover-color: darken($link-color, 10);
-$link-active-color: darken($link-color, 20);
+$link-hover-color: lighten($link-color, 10);
+$link-active-color: lighten($link-color, 20);
 $link-decoration: none;
 $link-hover-decoration: none;
 $link-focus-decoration: none;

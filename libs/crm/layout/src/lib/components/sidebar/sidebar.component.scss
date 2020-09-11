@@ -75,10 +75,13 @@ $_user-bg: $_logo-bg;
       font-weight: 600;
       font-size: 0.85em;
       letter-spacing: 0.2px;
-      transition: opacity $animation-duration-base $ease-in-out;
+      transition: color $animation-duration-base $ease-in-out;
 
       &:hover {
-        opacity: 0.8;
+        color: $link-hover-color;
+      }
+      &:active {
+        color: $link-active-color;
       }
     }
 
