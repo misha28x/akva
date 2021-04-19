@@ -6,8 +6,6 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { CrmAuthModule } from '@akva/crm/auth';
-
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -24,7 +22,6 @@ import { CoreModule } from './core.module';
     CoreModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    CrmAuthModule,
     AppRoutingModule,
     EffectsModule.forRoot([]),
     StoreModule.forRoot({}, {}),

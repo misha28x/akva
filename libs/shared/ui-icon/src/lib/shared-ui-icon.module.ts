@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NzIconModule } from 'ng-zorro-antd';
 
 import { IconComponent } from './icon/icon.component';
 
-
 @NgModule({
-  imports: [CommonModule, NzIconModule.forChild([])],
+  imports: [CommonModule],
   declarations: [IconComponent],
   exports: [IconComponent],
 })
