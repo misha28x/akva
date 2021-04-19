@@ -1,14 +1,9 @@
 {
   "npmScope": "akva",
-  "affected": {
-    "defaultBase": "master"
-  },
+  "affected": { "defaultBase": "master" },
   "implicitDependencies": {
     "angular.json": "*",
-    "package.json": {
-      "dependencies": "*",
-      "devDependencies": "*"
-    },
+    "package.json": { "dependencies": "*", "devDependencies": "*" },
     "tsconfig.base.json": "*",
     "tslint.json": "*",
     "nx.json": "*"
@@ -16,58 +11,22 @@
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
-      "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
-      }
+      "options": { "cacheableOperations": ["build", "lint", "test", "e2e"] }
     }
   },
   "projects": {
-    "crm": {
-      "tags": [],
-      "implicitDependencies": []
-    },
-    "crm-e2e": {
-      "tags": [],
-      "implicitDependencies": ["crm"]
-    },
-    "crm-assets": {
-      "tags": []
-    },
-    "shared-typography": {
-      "tags": ["scope:shared", "type:styles"]
-    },
-    "crm-layout": {
-      "tags": []
-    },
-    "shared-menu": {
-      "tags": []
-    },
-    "shared-ui-icon": {
-      "tags": []
-    },
-    "crm-auth": {
-      "tags": []
-    },
-    "shared-environments": {
-      "tags": ["scope:shared", "type:environments"]
-    },
-    "shared-config": {
-      "tags": []
-    },
-    "shared-auth-models": {
-      "tags": []
-    },
-    "shared-mocks": {
-      "tags": []
-    },
-    "crm-routes": {
-      "tags": []
-    },
-    "shared-response": {
-      "tags": []
-    },
-    "crm-task-planning": {
-      "tags": []
-    }
+    "crm": { "tags": [], "implicitDependencies": [] },
+    "crm-e2e": { "tags": [], "implicitDependencies": ["crm"] },
+    "crm-assets": { "tags": [] },
+    "shared-typography": { "tags": ["scope:shared", "type:styles"] },
+    "shared-menu": { "tags": [] },
+    "shared-ui-icon": { "tags": [] },
+    "shared-environments": { "tags": ["scope:shared", "type:environments"] },
+    "shared-config": { "tags": [] },
+    "shared-auth-models": { "tags": [] },
+    "shared-mocks": { "tags": [] },
+    "crm-routes": { "tags": [] },
+    "shared-response": { "tags": [] },
+    "shared-shell": { "tags": [] }
   }
 }
