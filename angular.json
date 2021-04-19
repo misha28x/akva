@@ -206,68 +206,6 @@
         }
       }
     },
-    "shared-ui-icon": {
-      "projectType": "library",
-      "root": "libs/shared/ui-icon",
-      "sourceRoot": "libs/shared/ui-icon/src",
-      "prefix": "akva",
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/shared/ui-icon/tsconfig.lib.json",
-              "libs/shared/ui-icon/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/shared/ui-icon/**/*"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/shared/ui-icon/jest.config.js",
-            "passWithNoTests": true
-          },
-          "outputs": ["coverage/libs/shared/ui-icon"]
-        }
-      },
-      "schematics": {
-        "@nrwl/angular:component": {
-          "style": "scss"
-        }
-      }
-    },
-    "shared-environments": {
-      "projectType": "library",
-      "root": "libs/shared/environments",
-      "sourceRoot": "libs/shared/environments/src",
-      "prefix": "akva",
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/shared/environments/tsconfig.lib.json",
-              "libs/shared/environments/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/shared/environments/**/*"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/shared/environments/jest.config.js",
-            "passWithNoTests": true
-          },
-          "outputs": ["coverage/libs/shared/environments"]
-        }
-      },
-      "schematics": {
-        "@nrwl/angular:component": {
-          "style": "scss"
-        }
-      }
-    },
     "shared-config": {
       "projectType": "library",
       "root": "libs/shared/config",
@@ -299,60 +237,6 @@
         }
       }
     },
-    "shared-auth-models": {
-      "root": "libs/shared/auth-models",
-      "sourceRoot": "libs/shared/auth-models/src",
-      "projectType": "library",
-      "schematics": {},
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:lint",
-          "options": {
-            "linter": "eslint",
-            "tsConfig": [
-              "libs/shared/auth-models/tsconfig.lib.json",
-              "libs/shared/auth-models/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/shared/auth-models/**/*"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/shared/auth-models/jest.config.js",
-            "passWithNoTests": true
-          },
-          "outputs": ["coverage/libs/shared/auth-models"]
-        }
-      }
-    },
-    "shared-mocks": {
-      "root": "libs/shared/mocks",
-      "sourceRoot": "libs/shared/mocks/src",
-      "projectType": "library",
-      "schematics": {},
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:lint",
-          "options": {
-            "linter": "eslint",
-            "tsConfig": [
-              "libs/shared/mocks/tsconfig.lib.json",
-              "libs/shared/mocks/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/shared/mocks/**/*"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/shared/mocks/jest.config.js",
-            "passWithNoTests": true
-          },
-          "outputs": ["coverage/libs/shared/mocks"]
-        }
-      }
-    },
     "crm-routes": {
       "root": "libs/crm/routes",
       "sourceRoot": "libs/crm/routes/src",
@@ -380,33 +264,6 @@
         }
       }
     },
-    "shared-response": {
-      "root": "libs/shared/response",
-      "sourceRoot": "libs/shared/response/src",
-      "projectType": "library",
-      "schematics": {},
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:lint",
-          "options": {
-            "linter": "eslint",
-            "tsConfig": [
-              "libs/shared/response/tsconfig.lib.json",
-              "libs/shared/response/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/shared/response/**/*"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/shared/response/jest.config.js",
-            "passWithNoTests": true
-          },
-          "outputs": ["coverage/libs/shared/response"]
-        }
-      }
-    },
     "shared-shell": {
       "projectType": "library",
       "root": "libs/shared/shell",
@@ -427,6 +284,131 @@
           "outputs": ["coverage/libs/shared/shell"],
           "options": {
             "jestConfig": "libs/shared/shell/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "crm-auth-data-access": {
+      "projectType": "library",
+      "root": "libs/crm/auth/data-access",
+      "sourceRoot": "libs/crm/auth/data-access/src",
+      "prefix": "akva",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/crm/auth/data-access/src/**/*.ts",
+              "libs/crm/auth/data-access/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/crm/auth/data-access"],
+          "options": {
+            "jestConfig": "libs/crm/auth/data-access/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "crm-auth-ui": {
+      "projectType": "library",
+      "root": "libs/crm/auth/ui",
+      "sourceRoot": "libs/crm/auth/ui/src",
+      "prefix": "akva",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/crm/auth/ui/src/**/*.ts",
+              "libs/crm/auth/ui/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/crm/auth/ui"],
+          "options": {
+            "jestConfig": "libs/crm/auth/ui/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "crm-auth-feature-shell": {
+      "projectType": "library",
+      "root": "libs/crm/auth/feature-shell",
+      "sourceRoot": "libs/crm/auth/feature-shell/src",
+      "prefix": "akva",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/crm/auth/feature-shell/src/**/*.ts",
+              "libs/crm/auth/feature-shell/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/crm/auth/feature-shell"],
+          "options": {
+            "jestConfig": "libs/crm/auth/feature-shell/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "crm-mocks": {
+      "projectType": "library",
+      "root": "libs/crm/mocks",
+      "sourceRoot": "libs/crm/mocks/src",
+      "prefix": "akva",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/crm/mocks/src/**/*.ts",
+              "libs/crm/mocks/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/crm/mocks"],
+          "options": {
+            "jestConfig": "libs/crm/mocks/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "crm-environments": {
+      "projectType": "library",
+      "root": "libs/crm/environments",
+      "sourceRoot": "libs/crm/environments/src",
+      "prefix": "akva",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/crm/environments/src/**/*.ts",
+              "libs/crm/environments/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/crm/environments"],
+          "options": {
+            "jestConfig": "libs/crm/environments/jest.config.js",
             "passWithNoTests": true
           }
         }

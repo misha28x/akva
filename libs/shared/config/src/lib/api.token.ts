@@ -1,5 +1,5 @@
 import { InjectionToken } from '@angular/core';
-import { environment } from '@akva/shared/environments';
+import { environment } from '@akva/crm/environments';
 
 export const API_URL = new InjectionToken('Api url');
 

@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 
-import { INITIAL_PATH_PROVIDER } from '@akva/shared/config';
-import { environment } from '@akva/shared/environments';
+import { environment } from '@akva/crm/environments';
 import { API_PROVIDER } from '@akva/shared/config';
 
 import { StoreModule } from '@ngrx/store';
@@ -15,8 +14,7 @@ registerLocaleData(uk);
 @NgModule({
   imports: [],
   providers: [
-    API_PROVIDER,
-    INITIAL_PATH_PROVIDER,
+    API_PROVIDER
   ],
 })
 export class CoreModule {}

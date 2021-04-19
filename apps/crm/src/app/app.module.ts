@@ -9,7 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { environment } from '@akva/shared/environments';
+import { environment } from '@akva/crm/environments';
 
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core.module';

@@ -3,7 +3,7 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppModule } from './app/app.module';
 
-import { environment } from '@akva/shared/environments';
+import { environment } from '@akva/crm/environments';
 
 if (environment.production) {
   enableProdMode();
