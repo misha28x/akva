@@ -12,9 +12,14 @@ import uk from '@angular/common/locales/uk';
 registerLocaleData(uk);
 
 @NgModule({
-  imports: [],
-  providers: [
-    API_PROVIDER
+  imports: [
+    EffectsModule.forRoot([]),
+    StoreModule.forRoot({}, {}),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+      logOnly: environment.production,
+    }),
   ],
+  providers: [API_PROVIDER],
 })
 export class CoreModule {}
