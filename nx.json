@@ -20,13 +20,13 @@
     "crm-assets": { "tags": [] },
     "shared-typography": { "tags": ["scope:shared", "type:styles"] },
     "shared-menu": { "tags": [] },
-    "shared-config": { "tags": [] },
     "crm-routes": { "tags": [] },
     "shared-shell": { "tags": [] },
     "crm-auth-data-access": { "tags": [] },
     "crm-auth-ui": { "tags": [] },
     "crm-auth-feature-shell": { "tags": [] },
     "crm-mocks": { "tags": [] },
-    "crm-environments": { "tags": [] }
+    "crm-environments": { "tags": [] },
+    "crm-config": { "tags": [] }
   }
 }

@@ -20,8 +20,6 @@
       "@akva/shared/typography": ["libs/shared/typography/src/index.ts"],
       "@akva/shared/menu": ["libs/shared/menu/src/index.ts"],
       "@akva/crm/consts": ["libs/crm/consts/src/index.ts"],
-      "@akva/crm/config": ["libs/crm/config/src/index.ts"],
-      "@akva/shared/config": ["libs/shared/config/src/index.ts"],
       "@akva/crm/routes": ["libs/crm/routes/src/index.ts"],
       "@akva/crm/task-planning": ["libs/crm/task-planning/src/index.ts"],
       "@akva/shared/shell": ["libs/shared/shell/src/index.ts"],
@@ -31,7 +29,8 @@
         "libs/crm/auth/feature-shell/src/index.ts"
       ],
       "@akva/crm/mocks": ["libs/crm/mocks/src/index.ts"],
-      "@akva/crm/environments": ["libs/crm/environments/src/index.ts"]
+      "@akva/crm/environments": ["libs/crm/environments/src/index.ts"],
+      "@akva/crm/config": ["libs/crm/config/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

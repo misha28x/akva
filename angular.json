@@ -206,37 +206,6 @@
         }
       }
     },
-    "shared-config": {
-      "projectType": "library",
-      "root": "libs/shared/config",
-      "sourceRoot": "libs/shared/config/src",
-      "prefix": "akva",
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/shared/config/tsconfig.lib.json",
-              "libs/shared/config/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/shared/config/**/*"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/shared/config/jest.config.js",
-            "passWithNoTests": true
-          },
-          "outputs": ["coverage/libs/shared/config"]
-        }
-      },
-      "schematics": {
-        "@nrwl/angular:component": {
-          "style": "scss"
-        }
-      }
-    },
     "crm-routes": {
       "root": "libs/crm/routes",
       "sourceRoot": "libs/crm/routes/src",
@@ -409,6 +378,31 @@
           "outputs": ["coverage/libs/crm/environments"],
           "options": {
             "jestConfig": "libs/crm/environments/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "crm-config": {
+      "projectType": "library",
+      "root": "libs/crm/config",
+      "sourceRoot": "libs/crm/config/src",
+      "prefix": "akva",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/crm/config/src/**/*.ts",
+              "libs/crm/config/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/crm/config"],
+          "options": {
+            "jestConfig": "libs/crm/config/jest.config.js",
             "passWithNoTests": true
           }
         }

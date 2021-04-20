@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 
 import { environment } from '@akva/crm/environments';
-import { API_PROVIDER } from '@akva/shared/config';
+import { API_PROVIDER } from '@akva/crm/config';
 
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
