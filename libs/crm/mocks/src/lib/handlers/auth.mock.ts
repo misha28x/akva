@@ -12,9 +12,9 @@ export const handlers = (api) => [
           data: {
             user: {
               district: 'Луцький',
-              permission: 1,
+              permission: 'Admin',
               serviceProvider: 80334,
-              serviceType: 3,
+              serviceType: ['Cold', 'Hot'],
               userId: 1,
               username: 'Адміністратор',
             },
