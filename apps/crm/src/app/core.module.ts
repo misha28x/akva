@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 
-import { environment } from '@akva/crm/environments';
-import { API_PROVIDER } from '@akva/crm/config';
-
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+
+import { environment } from '@akva/crm/environments';
+import { API_PROVIDER } from '@akva/crm/config';
 
 import { registerLocaleData } from '@angular/common';
 import uk from '@angular/common/locales/uk';

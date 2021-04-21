@@ -1,7 +1,7 @@
 import { rest } from 'msw';
-import { Credentials } from '@akva/crm/auth/data-access';
+import { Credentials } from '@akva/crm/auth/util';
 
-export const handlers = (api) => [
+export const handlers = (api: string) => [
   rest.post(`${api}/login`, (req, res, ctx) => {
     const { login } = req.body as Credentials;
 

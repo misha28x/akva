@@ -1,6 +1,6 @@
 import { createAction, props } from '@ngrx/store';
 
-import { Credentials, User } from '../../models/auth.model';
+import { Credentials, User } from '@akva/crm/auth/util';
 
 export const login = createAction(
   '[Login Page] Login',

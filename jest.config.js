@@ -12,5 +12,6 @@ module.exports = {
     '<rootDir>/libs/crm/mocks',
     '<rootDir>/libs/crm/environments',
     '<rootDir>/libs/crm/config',
+    '<rootDir>/libs/crm/auth/util',
   ],
 };

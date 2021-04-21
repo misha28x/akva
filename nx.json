@@ -27,6 +27,7 @@
     "crm-auth-feature-shell": { "tags": [] },
     "crm-mocks": { "tags": [] },
     "crm-environments": { "tags": [] },
-    "crm-config": { "tags": [] }
+    "crm-config": { "tags": [] },
+    "crm-auth-util": { "tags": [] }
   }
 }

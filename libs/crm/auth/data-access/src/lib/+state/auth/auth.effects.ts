@@ -1,23 +1,33 @@
 import { Injectable } from '@angular/core';
 import { createEffect, Actions, ofType } from '@ngrx/effects';
-import { fetch } from '@nrwl/angular';
 
-import * as AuthFeature from './auth.reducer';
-import * as AuthActions from './auth.actions';
+import { of } from 'rxjs';
+import { catchError, exhaustMap, map, tap } from 'rxjs/operators';
+
+import { login, loginSuccess, loginFailure, logout } from './auth.actions';
+import { AuthService } from '../../services/auth.service';
+import { JwtService } from '../../services/jwt.service';
 
 @Injectable()
 export class AuthEffects {
-  constructor(private actions$: Actions) {}
+  constructor(
+    private actions$: Actions,
+    private jwtService: JwtService,
+    private authService: AuthService
+  ) {}
 
-  login$ = this.actions$.pipe(
-    ofType(AuthActions.login),
-    fetch({
-      run(a) {
-        return null;
-      },
-      onError(a) {
-        return null;
-      },
-    })
+  login$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(login),
+      exhaustMap(({ credentials }) =>
+        this.authService.login(credentials).pipe(
+          tap(({ token }) => this.jwtService.storeToken(token)),
+          map(({ user }) => loginSuccess({ user })),
+          catchError(({ errorMsg }) => {
+            return of(loginFailure({ error: errorMsg }));
+          })
+        )
+      )
+    )
   );
 }

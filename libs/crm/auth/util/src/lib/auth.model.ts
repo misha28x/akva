@@ -1,8 +1,3 @@
-export interface AuthData {
-  user: User;
-  token: string;
-}
-
 export interface User {
   name: string;
   userId?: string;
@@ -16,6 +11,16 @@ export interface User {
 export interface Credentials {
   login: string;
   password: string;
+}
+
+export interface AuthData {
+  user: User;
+  token: string;
+}
+
+export interface AuthResponse {
+  error?: string | null;
+  data: AuthData;
 }
 
 export const userPermissions = [

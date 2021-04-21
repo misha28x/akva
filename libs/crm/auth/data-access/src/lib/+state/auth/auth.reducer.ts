@@ -1,7 +1,7 @@
 import { createReducer, on, Action } from '@ngrx/store';
+import { User } from '@akva/crm/auth/util';
 
 import * as AuthActions from './auth.actions';
-import { User } from '../../models/auth.model';
 
 export const AUTH_FEATURE_KEY = 'auth';
 

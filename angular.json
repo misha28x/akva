@@ -407,6 +407,31 @@
           }
         }
       }
+    },
+    "crm-auth-util": {
+      "projectType": "library",
+      "root": "libs/crm/auth/util",
+      "sourceRoot": "libs/crm/auth/util/src",
+      "prefix": "akva",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/crm/auth/util/src/**/*.ts",
+              "libs/crm/auth/util/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/crm/auth/util"],
+          "options": {
+            "jestConfig": "libs/crm/auth/util/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

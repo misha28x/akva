@@ -13,6 +13,7 @@
     "typeRoots": ["node_modules/@types"],
     "lib": ["es2017", "dom"],
     "skipLibCheck": true,
+    "strict": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
@@ -30,7 +31,8 @@
       ],
       "@akva/crm/mocks": ["libs/crm/mocks/src/index.ts"],
       "@akva/crm/environments": ["libs/crm/environments/src/index.ts"],
-      "@akva/crm/config": ["libs/crm/config/src/index.ts"]
+      "@akva/crm/config": ["libs/crm/config/src/index.ts"],
+      "@akva/crm/auth/util": ["libs/crm/auth/util/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
