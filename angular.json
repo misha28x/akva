@@ -44,7 +44,12 @@
                 "output": "/assets/"
               }
             ],
-            "styles": ["node_modules/tailwindcss/tailwind.css", "libs/shared/styles/lib/style.scss"],
+            "styles": [
+              "node_modules/tailwindcss/tailwind.css",
+              "libs/shared/styles/lib/style.scss",
+              "libs/shared/styles/lib/_typography.scss",
+              "libs/shared/styles/lib/_font.scss"
+            ],
             "scripts": []
           },
           "configurations": {
