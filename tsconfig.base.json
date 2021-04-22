@@ -13,6 +13,7 @@
     "typeRoots": ["node_modules/@types"],
     "lib": ["es2017", "dom"],
     "skipLibCheck": true,
+    "strict": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
@@ -20,16 +21,18 @@
       "@akva/shared/typography": ["libs/shared/typography/src/index.ts"],
       "@akva/shared/menu": ["libs/shared/menu/src/index.ts"],
       "@akva/crm/consts": ["libs/crm/consts/src/index.ts"],
-      "@akva/shared/ui-icon": ["libs/shared/ui-icon/src/index.ts"],
-      "@akva/crm/config": ["libs/crm/config/src/index.ts"],
-      "@akva/shared/environments": ["libs/shared/environments/src/index.ts"],
-      "@akva/shared/config": ["libs/shared/config/src/index.ts"],
-      "@akva/shared/auth-models": ["libs/shared/auth-models/src/index.ts"],
-      "@akva/shared/mocks": ["libs/shared/mocks/src/index.ts"],
       "@akva/crm/routes": ["libs/crm/routes/src/index.ts"],
-      "@akva/shared/response": ["libs/shared/response/src/index.ts"],
       "@akva/crm/task-planning": ["libs/crm/task-planning/src/index.ts"],
-      "@akva/shared/shell": ["libs/shared/shell/src/index.ts"]
+      "@akva/shared/shell": ["libs/shared/shell/src/index.ts"],
+      "@akva/crm/auth/data-access": ["libs/crm/auth/data-access/src/index.ts"],
+      "@akva/crm/auth/ui": ["libs/crm/auth/ui/src/index.ts"],
+      "@akva/crm/auth/feature-shell": [
+        "libs/crm/auth/feature-shell/src/index.ts"
+      ],
+      "@akva/crm/mocks": ["libs/crm/mocks/src/index.ts"],
+      "@akva/crm/environments": ["libs/crm/environments/src/index.ts"],
+      "@akva/crm/config": ["libs/crm/config/src/index.ts"],
+      "@akva/crm/auth/util": ["libs/crm/auth/util/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
