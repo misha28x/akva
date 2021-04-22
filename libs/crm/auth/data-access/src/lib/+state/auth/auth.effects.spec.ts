@@ -1,19 +1,24 @@
 import { TestBed } from '@angular/core/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { cold, hot } from 'jest-marbles';
+import { Router } from '@angular/router';
 
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
+
+import {
+  login,
+  loginFailure,
+  loginSuccess,
+  logout,
+} from '@akva/crm/auth/data-access';
+import { Credentials, User } from '@akva/crm/auth/util';
 
 import { AuthEffects } from './auth.effects';
 import { JwtService } from '../../services/jwt.service';
 import { AuthService } from '../../services/auth.service';
-import { login, loginFailure, loginSuccess } from '@akva/crm/auth/data-access';
-import { Credentials, User } from '@akva/crm/auth/util';
-import { tap } from 'rxjs/operators';
-
-class UserData {}
 
 describe('Auth Effects', () => {
+  let router: Router;
   let effects: AuthEffects;
   let actions$: Observable<any>;
   let jwtService: JwtService;
@@ -33,9 +38,14 @@ describe('Auth Effects', () => {
           provide: JwtService,
           useValue: { storeToken: jest.fn() },
         },
+        {
+          provide: Router,
+          useValue: { navigate: jest.fn() },
+        },
       ],
     });
 
+    router = TestBed.inject(Router);
     effects = TestBed.inject(AuthEffects);
     jwtService = TestBed.inject(JwtService);
     authService = TestBed.inject(AuthService);
@@ -68,6 +78,33 @@ describe('Auth Effects', () => {
       authService.login = jest.fn(() => response$);
 
       expect(effects.login$).toBeObservable(expected$);
+    });
+  });
+
+  describe('logoutRedirect$', () => {
+    it('should call router navigate with correct url', (done) => {
+      const action = logout();
+
+      actions$ = of(action);
+
+      effects.logoutRedirect$.subscribe(() => {
+        expect(router.navigate).toHaveBeenCalledWith(['/login']);
+        done();
+      });
+    });
+  });
+
+  describe('loginRedirect$', () => {
+    it('should call router navigate with correct url', (done) => {
+      const user = { name: 'admin', permission: 'Admin' } as User;
+      const action = loginSuccess({ user });
+
+      actions$ = of(action);
+
+      effects.loginSuccessRedirect$.subscribe(() => {
+        expect(router.navigate).toHaveBeenCalledWith(['/']);
+        done();
+      });
     });
   });
 });

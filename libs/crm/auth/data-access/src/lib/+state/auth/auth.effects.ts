@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { createEffect, Actions, ofType } from '@ngrx/effects';
 
 import { of } from 'rxjs';
@@ -11,6 +13,7 @@ import { JwtService } from '../../services/jwt.service';
 @Injectable()
 export class AuthEffects {
   constructor(
+    private router: Router,
     private actions$: Actions,
     private jwtService: JwtService,
     private authService: AuthService
@@ -29,5 +32,25 @@ export class AuthEffects {
         )
       )
     )
+  );
+
+  logoutRedirect$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(logout),
+        tap(() => this.router.navigate(['/login']))
+      ),
+    {
+      dispatch: false,
+    }
+  );
+
+  loginSuccessRedirect$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(loginSuccess),
+        tap(() => this.router.navigate(['/']))
+      ),
+    { dispatch: false }
   );
 }
