@@ -1,11 +1,10 @@
 import { Inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { catchError, map } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 
 import { API_URL } from '@akva/crm/config';
-import { Credentials, AuthResponse } from '@akva/crm/auth/util';
-import { of } from 'rxjs';
+import { AuthResponse, Credentials } from '@akva/crm/auth/util';
 
 @Injectable({
   providedIn: 'root',

@@ -20,8 +20,7 @@ import { AuthService } from '../../services/auth.service';
 describe('Auth Effects', () => {
   let router: Router;
   let effects: AuthEffects;
-  let actions$: Observable<any>;
-  let jwtService: JwtService;
+  let actions$: Observable<unknown>;
   let authService: AuthService;
 
   beforeEach(() => {
@@ -47,7 +46,6 @@ describe('Auth Effects', () => {
 
     router = TestBed.inject(Router);
     effects = TestBed.inject(AuthEffects);
-    jwtService = TestBed.inject(JwtService);
     authService = TestBed.inject(AuthService);
   });
 

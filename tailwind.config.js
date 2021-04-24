@@ -1,4 +1,5 @@
 const { guessProductionMode } = require('@ngneat/tailwind');
+const { blueGray } = require('tailwindcss/colors');
 
 process.env.TAILWIND_MODE = guessProductionMode() ? 'build' : 'watch';
 
@@ -13,10 +14,21 @@ module.exports = {
   },
   darkMode: false, // or 'media' or 'class'
   theme: {
+    colors: {
+      white: '#fff',
+      primary: {
+        ...blueGray,
+      },
+    },
     extend: {},
   },
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/aspect-ratio'),
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/line-clamp'),
+    require('@tailwindcss/typography'),
+  ],
 };

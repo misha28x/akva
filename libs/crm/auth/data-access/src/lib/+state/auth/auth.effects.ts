@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { createEffect, Actions, ofType } from '@ngrx/effects';
+import { Actions, createEffect, ofType } from '@ngrx/effects';
 
 import { of } from 'rxjs';
 import { catchError, exhaustMap, map, tap } from 'rxjs/operators';
 
-import { login, loginSuccess, loginFailure, logout } from './auth.actions';
+import { login, loginFailure, loginSuccess, logout } from './auth.actions';
 import { AuthService } from '../../services/auth.service';
 import { JwtService } from '../../services/jwt.service';
 

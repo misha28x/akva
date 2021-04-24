@@ -238,31 +238,6 @@
         }
       }
     },
-    "shared-shell": {
-      "projectType": "library",
-      "root": "libs/shared/shell",
-      "sourceRoot": "libs/shared/shell/src",
-      "prefix": "akva",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/shared/shell/src/**/*.ts",
-              "libs/shared/shell/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/shell"],
-          "options": {
-            "jestConfig": "libs/shared/shell/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
     "crm-auth-data-access": {
       "projectType": "library",
       "root": "libs/crm/auth/data-access",
@@ -433,6 +408,31 @@
           "outputs": ["coverage/libs/crm/auth/util"],
           "options": {
             "jestConfig": "libs/crm/auth/util/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "crm-layout": {
+      "projectType": "library",
+      "root": "libs/crm/layout",
+      "sourceRoot": "libs/crm/layout/src",
+      "prefix": "akva",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/crm/layout/src/**/*.ts",
+              "libs/crm/layout/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/crm/layout"],
+          "options": {
+            "jestConfig": "libs/crm/layout/jest.config.js",
             "passWithNoTests": true
           }
         }
