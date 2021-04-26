@@ -1,11 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { CrmLayoutModule } from '@akva/crm/layout';
+
+import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core.module';
 
@@ -18,6 +20,7 @@ import { CoreModule } from './core.module';
     HttpClientModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    CrmLayoutModule,
   ],
   bootstrap: [AppComponent],
 })

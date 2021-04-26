@@ -1,0 +1,14 @@
+<ng-container *ngIf="menuItem">
+  <div
+    class="group p-4 hover:bg-primary-900 bg-opacity-50 hover:bg-opacity-100 rounded-lg duration-200"
+  >
+    <span></span>
+    <a
+      class="text-primary-300 group-hover:text-primary-50"
+      routerLinkActive="text-primary-50"
+      [routerLink]="menuItem.routing"
+    >
+      {{ menuItem.title }}
+    </a>
+  </div>
+</ng-container>

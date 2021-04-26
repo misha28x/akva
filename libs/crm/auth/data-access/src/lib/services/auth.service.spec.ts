@@ -1,6 +1,5 @@
 import { TestBed } from '@angular/core/testing';
 
-import { HttpClient } from '@angular/common/http';
 import {
   HttpClientTestingModule,
   HttpTestingController,
@@ -11,9 +10,8 @@ import { AuthService } from './auth.service';
 import { Credentials } from '@akva/crm/auth/util';
 
 describe('AuthService', () => {
-  let testApiUrl = 'api';
+  const testApiUrl = 'api';
   let service: AuthService;
-  let httpClient: HttpClient;
   let testingController: HttpTestingController;
 
   beforeEach(() => {
@@ -23,7 +21,6 @@ describe('AuthService', () => {
     });
 
     service = TestBed.inject(AuthService);
-    httpClient = TestBed.inject(HttpClient);
     testingController = TestBed.inject(HttpTestingController);
   });
 

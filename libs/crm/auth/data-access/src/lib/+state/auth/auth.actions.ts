@@ -13,7 +13,7 @@ export const loginSuccess = createAction(
 );
 export const loginFailure = createAction(
   '[Auth Api] Login Failure',
-  props<{ error: any }>()
+  props<{ error: string }>()
 );
 
 export const logout = createAction('[Auth] Logout');

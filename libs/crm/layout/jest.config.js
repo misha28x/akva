@@ -1,5 +1,5 @@
 module.exports = {
-  displayName: 'crm-environments',
+  displayName: 'crm-layout',
   preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -14,7 +14,7 @@ module.exports = {
       },
     },
   },
-  coverageDirectory: '../../../coverage/libs/crm/environments',
+  coverageDirectory: '../../../coverage/libs/crm/layout',
   snapshotSerializers: [
     'jest-preset-angular/build/AngularNoNgAttributesSnapshotSerializer.js',
     'jest-preset-angular/build/AngularSnapshotSerializer.js',

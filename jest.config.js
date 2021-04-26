@@ -5,7 +5,6 @@ module.exports = {
     '<rootDir>/libs/shared/menu',
     '<rootDir>/libs/crm/routes',
     '<rootDir>/libs/crm/task-planing',
-    '<rootDir>/libs/shared/shell',
     '<rootDir>/libs/crm/auth/data-access',
     '<rootDir>/libs/crm/auth/ui',
     '<rootDir>/libs/crm/auth/feature-shell',
@@ -13,5 +12,6 @@ module.exports = {
     '<rootDir>/libs/crm/environments',
     '<rootDir>/libs/crm/config',
     '<rootDir>/libs/crm/auth/util',
+    '<rootDir>/libs/crm/layout',
   ],
 };

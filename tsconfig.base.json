@@ -23,7 +23,6 @@
       "@akva/crm/consts": ["libs/crm/consts/src/index.ts"],
       "@akva/crm/routes": ["libs/crm/routes/src/index.ts"],
       "@akva/crm/task-planning": ["libs/crm/task-planning/src/index.ts"],
-      "@akva/shared/shell": ["libs/shared/shell/src/index.ts"],
       "@akva/crm/auth/data-access": ["libs/crm/auth/data-access/src/index.ts"],
       "@akva/crm/auth/ui": ["libs/crm/auth/ui/src/index.ts"],
       "@akva/crm/auth/feature-shell": [
@@ -32,7 +31,8 @@
       "@akva/crm/mocks": ["libs/crm/mocks/src/index.ts"],
       "@akva/crm/environments": ["libs/crm/environments/src/index.ts"],
       "@akva/crm/config": ["libs/crm/config/src/index.ts"],
-      "@akva/crm/auth/util": ["libs/crm/auth/util/src/index.ts"]
+      "@akva/crm/auth/util": ["libs/crm/auth/util/src/index.ts"],
+      "@akva/crm/layout": ["libs/crm/layout/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

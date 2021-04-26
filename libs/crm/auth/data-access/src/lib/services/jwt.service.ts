@@ -6,8 +6,6 @@ const TOKEN_KEY = 'akva__token';
   providedIn: 'root',
 })
 export class JwtService {
-  constructor() {}
-
   storeToken(token: string) {
     localStorage.setItem(TOKEN_KEY, token);
   }

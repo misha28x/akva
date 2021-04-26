@@ -1,0 +1,26 @@
+:host {
+  --sidebar-width: 320px;
+  --header-height: 70px;
+  --logo-height: calc(var(--header-height) - 2rem);
+
+  display: grid;
+  height: 100%;
+
+  grid-template-areas:
+    'aside head'
+    'aside main';
+
+  grid-template-columns: var(--sidebar-width) 1fr;
+  grid-template-rows: var(--header-height) 1fr;
+
+  akva-header {
+    grid-area: head;
+  }
+  akva-sidebar {
+    grid-area: aside;
+  }
+
+  akva-content {
+    grid-area: main;
+  }
+}
