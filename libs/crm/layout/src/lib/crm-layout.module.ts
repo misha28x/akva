@@ -6,6 +6,8 @@ import { SidebarComponent } from './components/sidebar.component';
 import { ContentComponent } from './components/content.component';
 import { MainViewComponent } from './main-view/main-view.component';
 import { RouterModule } from '@angular/router';
+import { MenuComponent } from './components/menu/menu.component';
+import { MenuItemComponent } from './components/menu/menu-item.component';
 
 @NgModule({
   imports: [CommonModule, RouterModule],
@@ -14,6 +16,8 @@ import { RouterModule } from '@angular/router';
     HeaderComponent,
     SidebarComponent,
     ContentComponent,
+    MenuComponent,
+    MenuItemComponent,
   ],
   exports: [MainViewComponent],
 })

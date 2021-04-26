@@ -1,9 +1,9 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from "@angular/core";
 
 @Component({
-  selector: 'akva-sidebar',
+  selector: "akva-sidebar",
   template: `
-    <div class="bg-primary-700 h-full">
+    <div class="bg-primary-800 h-full">
       <div
         class="flex items-center justify-between p-4 h-[var(--header-height)]] shadow-md"
       >

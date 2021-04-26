@@ -94,5 +94,8 @@
   },
   "resolutions": {
     "postcss": "8.2.8"
+  },
+  "prettier": {
+    "htmlWhitespaceSensitivity": "ignore"
   }
 }
