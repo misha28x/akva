@@ -1,0 +1,8 @@
+<span akvaRipple class="ripple"></span>
+
+<ng-template #content>
+  <ng-content></ng-content>
+</ng-template>
+
+<ng-template #loading>Loading...</ng-template>
+<ng-container *ngIf="isLoading; then loading; else content"></ng-container>
