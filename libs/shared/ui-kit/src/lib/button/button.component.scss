@@ -1,0 +1,36 @@
+@import "libs/shared/styles/lib/mixins";
+
+$color-palettes: (
+  "primary": "bg-primary-800",
+  "secondary": "bg-gray-700",
+  "error": "bg-warn-600",
+  "ghost": "bg-transparent shadow-md text-blueGray-500",
+);
+
+$sizes: (
+  "sm": "px-sm py-xs text-sm",
+  "md": "px-md py-xs text-base",
+  "lg": "px-lg py-sm text-lg",
+  "xl": "px-lg py-sm text-xl font-semibold",
+);
+
+:host {
+  @apply text-primary-50 rounded-md shadow-md duration-100 disabled:bg-opacity-30 relative;
+  transition: box-shadow 0ms;
+  letter-spacing: 0.3px;
+
+  &:focus {
+    @apply outline-none ring ring-offset-2 ring-primary-500 ring-opacity-50;
+  }
+
+  &:disabled {
+    --tw-bg-opacity: 0.5 !important;
+  }
+
+  @include apply-classes($color-palettes);
+  @include apply-classes($sizes, "btn");
+
+  .ripple {
+    @apply absolute w-full h-full left-0 top-0
+  }
+}

@@ -1,6 +1,4 @@
 {
-  "npmScope": "akva",
-  "affected": { "defaultBase": "master" },
   "implicitDependencies": {
     "angular.json": "*",
     "package.json": { "dependencies": "*", "devDependencies": "*" },
@@ -8,10 +6,20 @@
     "tslint.json": "*",
     "nx.json": "*"
   },
+  "affected": { "defaultBase": "master" },
+  "npmScope": "akva",
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
-      "options": { "cacheableOperations": ["build", "lint", "test", "e2e"] }
+      "options": {
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e",
+          "build-storybook"
+        ]
+      }
     }
   },
   "projects": {
@@ -28,6 +36,7 @@
     "crm-environments": { "tags": [] },
     "crm-config": { "tags": [] },
     "crm-auth-util": { "tags": [] },
-    "crm-layout": { "tags": [] }
+    "crm-layout": { "tags": [] },
+    "shared-ui-kit": { "tags": [] }
   }
 }

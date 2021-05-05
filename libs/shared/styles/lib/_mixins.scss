@@ -1,0 +1,7 @@
+@mixin apply-classes($map, $prefix: "akva") {
+  @each $name, $classes in $map {
+    &.#{$prefix}-#{$name} {
+      @apply #{$classes};
+    }
+  }
+}
