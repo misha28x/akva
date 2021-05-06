@@ -1,16 +1,9 @@
 module.exports = {
   projects: [
     "<rootDir>/apps/crm",
-    "<rootDir>/libs/crm/assets",
-    "<rootDir>/libs/shared/menu",
-    "<rootDir>/libs/crm/routes",
-    "<rootDir>/libs/crm/task-planing",
     "<rootDir>/libs/crm/auth/data-access",
     "<rootDir>/libs/crm/auth/ui",
     "<rootDir>/libs/crm/auth/feature-shell",
-    "<rootDir>/libs/crm/mocks",
-    "<rootDir>/libs/crm/environments",
-    "<rootDir>/libs/crm/config",
     "<rootDir>/libs/crm/auth/util",
     "<rootDir>/libs/crm/layout",
     "<rootDir>/libs/shared/ui-kit",

@@ -1,9 +1,9 @@
-import 'jest-preset-angular';
+import "jest-preset-angular";
 
-import { handlers } from '@akva/shared/mocks';
-import { setupServer } from 'msw/node';
+import { handlers } from "@akva/crm/mocks";
+import { setupServer } from "msw/node";
 
-describe('Mocks', async () => {
+describe("Mocks", async () => {
   const server = setupServer(...handlers);
 
   beforeAll(() => {
